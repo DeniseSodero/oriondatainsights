@@ -40,22 +40,24 @@ nav a:hover {
   padding: 4rem 1rem;
 }
 
-.botao:hover,
-button:hover {
-  background-color: #007a99;
+.botao, button {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background-color: #027d99;
+  margin-top: 1rem;
+  text-decoration: none; /* para links */
+}
+
+.botao:hover, button:hover {
+  background-color: #024255;
   transform: scale(1.05);
   transition: 0.3s;
 }
 
-.botao {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.8rem 1.2rem;
-  background-color: #02586b;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
 
 /* Sobre */
 #sobre {
@@ -65,8 +67,15 @@ button:hover {
 
 /* Produtos */
 #produtos {
-  padding: 3rem 2rem;
-  background-color: #eef1f6;
+  padding: 2rem 2rem;
+  background-color: #c7b7f3;
+  color: #020857;
+}
+
+#fale{
+  padding: 2rem 2rem;
+  background-color: #e7e0ee;
+  color: #050fa3;
 }
 
 .container-produtos {
@@ -78,14 +87,15 @@ button:hover {
 
 /* Cada card vai ocupar um espaço mínimo e crescer conforme a tela */
 .card {
-  background: white;
+  background: rgba(244, 239, 248, 0.829);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  flex: 1 1 250px; /* base de 250px, cresce e encolhe conforme o espaço */
-  max-width: 300px; /* evita que fiquem largos demais */
+  flex: 1 1 200px; /* base de 250px, cresce e encolhe conforme o espaço */
+  max-width: 350px; /* evita que fiquem largos demais */
   text-align: center;
   padding: 1rem;
   transition: 0.3s;
+  color: #020857;
 }
 
 /* Hover e imagem permanecem iguais */
@@ -108,7 +118,7 @@ button:hover {
 }
 
 form {
-  max-width: 400px;
+  max-width: 25em;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -116,44 +126,29 @@ form {
 }
 
 fieldset {
-  border: 2px solid #00a8cc;
-  border-radius: 8px;
+  border: 0.2rem solid #00a8cc;
+  border-radius: 1.5rem;
   padding: 1.5rem;
 }
 
 label {
   font-weight: bold;
   display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;  
 }
 
 input {
   display: block;
-  width: 100%;
+  width: 95%;
   padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #00a8cc;
-  color: white;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #007a99;
-  transform: scale(1.05);
-  transition: 0.3s;
+  border: 0.15rem solid #0d6879;
+  border-radius: 0.5rem;  
 }
 
 /* Rodapé */
 footer {
-  background-color: #0b1f3a;
+  background-color: #034d8a;
   color: white;
   text-align: center;
   padding: 2rem 1rem;
