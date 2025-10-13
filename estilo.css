@@ -115,6 +115,26 @@ nav a:hover {
     flex: 1 1 100%;
     max-width: none;
   }
+  
+  /* Ajustes do cabeçalho no mobile */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
 }
 
 form {
