@@ -79,24 +79,22 @@ nav a:hover {
 }
 
 /* wrap -muda a posicao dos elementos para caberem na tela*/
-.container-produtos {
-  /*background-color: #b62906;*/
+/*.container-produtos {
+  /*background-color: #b62906;
+  display: flex; 
   flex-wrap: wrap; 
   flex-direction: row;  
   justify-content: center;
-  align-items: stretch;
-  max-width: 100%;
+  align-items: stretch;  
   gap: 2rem;
-}
+}*/
 
-
-/*
 .container-produtos {
   display: grid;
   gap: 2rem;
   justify-items: center;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas por padrão /*
-}*/
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas por padrão */
+}
 
 /* Cada card vai ocupar um espaço mínimo e crescer conforme a tela */
 .card {
@@ -119,8 +117,7 @@ nav a:hover {
 
 .card img {
   width: 100%;
-  height: auto
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 /* Ajuste responsivo: em telas pequenas os cards ocupam 100% */
@@ -152,12 +149,14 @@ nav a:hover {
 
   .container-produtos {
     grid-template-columns: 1fr; /* empilha tudo */
+    width: 100%;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .container-produtos {
     grid-template-columns: repeat(2, 1fr); /* quebra para 2x2 */
+    width: 100%;
   }
 }
 
