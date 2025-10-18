@@ -8,9 +8,7 @@ body {
   color: #222;
 }
 
-main {
-  color: #054bb4;
-}
+
 
 /* ===============================
    Header
@@ -94,7 +92,7 @@ header form .btn:hover {
    Hero
    =============================== */
 .hero {
-  background-color: #21aaaf;
+  background-color: #1da8ca;
   color: white;
   text-align: center;
   padding: 4rem 1rem;
@@ -121,12 +119,28 @@ button:hover {
 }
 
 /* ===============================
+   Carrossel
+   =============================== */
+
+#meuCarrossel .carousel-item img {
+
+  /* Defina a altura máxima que você deseja para o carrossel */
+   max-height: 30rem; 
+  /* Isso garante que a imagem cubra a área sem distorcer, cortando o excesso */
+  object-fit: cover; 
+  object-position: center; /* Centraliza a imagem no corte */
+  }
+
+/* ===============================
    Sobre
    =============================== */
 #sobre {
+  background-color: #065858 !important;
   padding: 3rem 2rem;
   text-align: center;
-}
+  color: #f9f9fc;
+  }
+
 
 /* ===============================
    Produtos
@@ -134,14 +148,14 @@ button:hover {
 #produtos {
   padding: 1rem 1rem;
   background-color: #c7b7f3;
-  color: #8206f7;
+  color: rgba(96, 14, 128, 0.829);
 }
 
 #produto1,
 #produto2,
 #produto3,
 #produto4 {
-  padding: 3rem 2rem;
+  padding: 0.5rem 0.5rem;
   text-align: center;
 }
 
@@ -153,14 +167,14 @@ button:hover {
 }
 
 .card {
-  background: rgba(244, 239, 248, 0.829);
+  background: rgba(96, 14, 128, 0.829) !important;
   border-radius: 0.5rem;
   box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.1);
   max-width: 19rem;
   text-align: center;
-  padding: 1rem;
+  padding: 0.2rem;
   transition: 0.3s;
-  color: #020857;
+  color: #e8e8ec !important;
 }
 
 .card:hover {
