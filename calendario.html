@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uma Estória por Dia - Orion Data Insights</title>
+  <link rel="stylesheet" href="estilo_versao2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Ícones do Font Awesome (necessário para os ícones nas funcionalidades) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body class="bg-estorias">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Orion Data Insights</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="index.html#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Aplicativos
+                      </a>
+                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="calendario.html">Calendário Afetivo</a></li>
+                         <li><a class="dropdown-item" href="estorias.html">Uma Estória por Dia</a></li>
+                         <li><hr class="dropdown-divider"></li> 
+                         <li><a class="dropdown-item" href="tarefas.html">Tarefas de Casa</a></li>
+                          <li><a class="dropdown-item" href="transcritor.html">Transcritor de Áudios</a></li>
+                     </ul>
+                    </li>
+                    <li class="nav-item">
+                     <a class="nav-link" href="index.html#fale">Fale Conosco</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contato">Contato</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 app-page">
+        <h1 class="text-center mb-4">Calendário Afetivo</h1>
+        <p class="lead text-center">Tecnologia para não esquecer quem é importante.</p>
+        
+        <section class="mt-5">
+            <h3 class="text-center mb-4">Funcionalidades Principais</h3>
+            <div class="row">
+                <!-- Funcionalidade 1: Associação de Fotos -->
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <i class="fas fa-font feature-icon"></i>
+                        <h4>Associação de Fotos</h4>
+                        <p>Lembretes visuais para que o usuário saiba imediatamente de quem é a data.</p>
+                    </div>
+                </div>
+
+                <!-- Funcionalidade 2: Interface Simples e de Alto Contraste -->
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <i class="fas fa-route feature-icon"></i>
+                        <h4>Interface Simples e de Alto Contraste</h4>
+                        <p>Design amigável, ideal para idosos e pessoas com déficit de memória.</p>
+                    </div>
+                </div>
+
+                <!-- Funcionalidade 3:Alertas Personalizáveis -->
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <i class="fas fa-eye feature-icon"></i>
+                        <h4>Alertas Personalizáveis</h4>
+                        <p> Escolha quando ser lembrado (dias antes e no dia do evento)</p>
+                    </div>
+                </div>
+               <!-- Funcionalidade 4: Exclusão e Edição -->
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <i class="fas fa-tachometer-alt feature-icon"></i>
+                        <h4>Exclusão e Edição</h4>
+                        <p>Gestão completa das datas, permitindo corrigir nomes ou trocar fotos facilmente.</p>
+                    </div>
+                </div>
+              <!-- Funcionalidade 5: Sincronização Familiar -->
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <i class="fas fa-circle-user feature-icon"></i>
+                        <h4>Sincronização Familiar (Premium)</h4>
+                        <p>Permite que um cuidador gerencie e atualize o calendário remotamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5 text-center">
+            <a href="#" class="botao btn-lg">Baixar (Em Breve)</a>
+        </section>
+
+    </main>
+
+    <footer id="contato">
+        <h2>Contato</h2>
+        <p>E-mail: contato@oriondatainsights.com</p>
+        <p>LinkedIn | GitHub | Instagram</p>
+    </footer>
+    <!-- CORREÇÃO: Adicionando o script do Bootstrap para o dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

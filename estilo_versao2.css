@@ -4,11 +4,29 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #f9fafb;
+  background-color: #fafafc !important;
   color: #222;
 }
 
+/* ===============================
+   Cores de Fundo de Aplicativos
+   (Usadas na tag <body>)
+   =============================== */
+.bg-calendario {
+    background-color: #e3e7f4; /* Azul suave */
+}
 
+.bg-estorias {
+    background-color: #f4e3e3; /* Roxo/rosa suave */
+}
+
+.bg-tarefas {
+    background-color: #e3f4e9; /* Verde suave */
+}
+
+.bg-transcritor {
+    background-color: #e3f3f4; /* Ciano suave */
+}
 
 /* ===============================
    Header
@@ -123,12 +141,9 @@ button:hover {
    =============================== */
 
 #meuCarrossel .carousel-item img {
-
-  /* Defina a altura máxima que você deseja para o carrossel */
-   max-height: 30rem; 
-  /* Isso garante que a imagem cubra a área sem distorcer, cortando o excesso */
+  max-height: 30rem; 
   object-fit: cover; 
-  object-position: center; /* Centraliza a imagem no corte */
+  object-position: center; 
   }
 
 /* ===============================
@@ -185,6 +200,43 @@ button:hover {
 .card img {
   width: 100%;
   border-radius: 0.3rem;
+}
+
+/* ===============================
+   FEATURE BOXES (Novas Funcionalidades)
+   =============================== */
+.feature-box {
+  background-color: #ffffff; /* Fundo branco para alto contraste */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+  border-left: 5px solid #00a8cc; /* Linha de destaque */
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #03569b; /* Cor principal da marca */
+    margin-bottom: 10px;
+}
+
+.feature-box h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
 }
 
 /* ===============================
