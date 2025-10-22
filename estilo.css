@@ -1,46 +1,25 @@
+/* ===============================
+   Configurações Gerais
+   =============================== */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #f9fafb;
+  background-color: #fafafc !important;
   color: #222;
 }
 
-/* Cabeçalho */
-header {
-  background-color: #034d8a;
-  color: white;
-  display: flex; /* define o que é o container*/
-  justify-content: space-between;  /* eixo principal*/
-  align-items: center;  /* eixo secundario*/
-  padding: 1rem 2rem;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-  color: #00a8cc;
-  transition: 0.3s;
-}
-
-/* Hero */
+/* ===============================
+   Hero
+   =============================== */
 .hero {
-  background-color: #21aaaf;
+  background-color: #1da8ca;
   color: white;
   text-align: center;
   padding: 4rem 1rem;
 }
 
-.botao, button {
+.botao,
+button {
   display: inline-block;
   padding: 0.8rem 1.2rem;
   border-radius: 5px;
@@ -49,70 +28,66 @@ nav a:hover {
   cursor: pointer;
   background-color: #027d99;
   margin-top: 1rem;
-  text-decoration: none; /* para links */
+  text-decoration: none;
 }
 
-.botao:hover, button:hover {
+.botao:hover,
+button:hover {
   background-color: #024255;
   transform: scale(1.05);
   transition: 0.3s;
 }
 
 
-/* Sobre */
+/* ===============================
+   Sobre
+   =============================== */
 #sobre {
+  background-color: #065858 !important;
   padding: 3rem 2rem;
   text-align: center;
-}
+  color: #f9f9fc;
+  }
 
-/* Produtos */
+
+/* ===============================
+   Produtos
+   =============================== */
 #produtos {
   padding: 1rem 1rem;
   background-color: #c7b7f3;
-  color: #020857;
+  color: rgba(96, 14, 128, 0.829);
 }
 
-#fale{
-  padding: 2rem 2rem;
-  background-color: #e7e0ee;
-  color: #050fa3;
+#produto1,
+#produto2,
+#produto3,
+#produto4 {
+  padding: 0.5rem 0.5rem;
+  text-align: center;
 }
-
-/* wrap -muda a posicao dos elementos para caberem na tela*/
-/*.container-produtos {
-  /*background-color: #b62906;
-  display: flex; 
-  flex-wrap: wrap; 
-  flex-direction: row;  
-  justify-content: center;
-  align-items: stretch;  
-  gap: 2rem;
-}*/
 
 .container-produtos {
   display: grid;
   gap: 2rem;
   justify-items: center;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas por padrão */
+  grid-template-columns: repeat(4, 1fr);
 }
 
-/* Cada card vai ocupar um espaço mínimo e crescer conforme a tela */
 .card {
-  background: rgba(244, 239, 248, 0.829);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  flex: 1 1 15rem; /* base de 250px, cresce e encolhe conforme o espaço */
-  max-width: 25rem; /* evita que fiquem largos demais */
+  background: rgba(96, 14, 128, 0.829) !important;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.1);
+  max-width: 19rem;
   text-align: center;
-  padding: 1rem;
+  padding: 0.2rem;
   transition: 0.3s;
-  color: #020857;
+  color: #e8e8ec !important;
 }
 
-/* Hover e imagem permanecem iguais */
 .card:hover {
-  box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.2);
-  transform: translateY(-0.28);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.5rem);
 }
 
 .card img {
@@ -120,52 +95,75 @@ nav a:hover {
   border-radius: 0.3rem;
 }
 
-/* Ajuste responsivo: em telas pequenas os cards ocupam 100% */
-@media (max-width: 600px) {
-  .card {
-    flex: 1 1 100%;
-    max-width: none;
-  }
+/* ===============================
+   FEATURE BOXES (Novas Funcionalidades)
+   =============================== */
+.feature-box {
+  background-color: #ffffff; /* Fundo branco para alto contraste */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+  border-left: 5px solid #00a8cc; /* Linha de destaque */
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #03569b; /* Cor principal da marca */
+    margin-bottom: 10px;
+}
+
+.feature-box h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* ===============================
+   Formulário de Contato
+   =============================== */
+#fale {
+  padding: 2rem 2rem;
+  background-color: #e7e0ee;
+  color: #050fa3;
   
-  /* Ajustes do cabeçalho no mobile */
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0;
-  }
-
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-
-  .container-produtos {
-    grid-template-columns: 1fr; /* empilha tudo */
-    width: 100%;
-  }
 }
 
-@media (max-width: 900px) {
-  .container-produtos {
-    grid-template-columns: repeat(2, 1fr); /* quebra para 2x2 */
-    width: 100%;
-  }
-}
-
-form {
-  max-width: 25em;
+.form-fale {
+  max-width: 25rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.form-fale button {
+  margin-top: 1rem;        /* espaço entre o botão e o campo acima */
+  padding: 0.6rem 1.2rem;  /* ajuste de altura e largura */
+  border-radius: 8px;      /* bordas arredondadas */
+  border: none;            /* remove borda padrão */
+  background-color: #027d99; /* cor de fundo */
+  color: white;            /* cor do texto */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-fale button:hover {
+  background-color: #024255; /* cor ao passar o mouse */
+  transform: scale(1.05);
 }
 
 fieldset {
@@ -178,7 +176,7 @@ label {
   font-weight: bold;
   display: block;
   margin-top: 0.5rem;
-  margin-bottom: 0.25rem;  
+  margin-bottom: 0.25rem;
 }
 
 input {
@@ -186,13 +184,51 @@ input {
   width: 95%;
   padding: 0.5rem;
   border: 0.15rem solid #0d6879;
-  border-radius: 0.5rem;  
+  border-radius: 0.5rem;
 }
 
-/* Rodapé */
+/* ===============================
+   Rodapé
+   =============================== */
 footer {
   background-color: #034d8a;
   color: white;
   text-align: center;
   padding: 2rem 1rem;
+}
+
+/* ===============================
+   Responsividade Grid de Produtos
+   =============================== */
+@media (max-width: 900px) and (min-width: 576px) {
+  .container-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .container-produtos {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+
+/* ===============================
+   Responsividade Header
+   =============================== */
+@media (max-width: 767px) {
+  header .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  header form.d-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header form .form-control,
+  header form .btn {
+    width: 100%;
+  }
 }

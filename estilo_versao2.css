@@ -31,7 +31,7 @@ body {
 /* ===============================
    Header
    =============================== */
-header .navbar {
+/*header .navbar {
   background-color: #03569b !important;
   padding: 0.5rem 1rem;
   display: flex;
@@ -40,13 +40,13 @@ header .navbar {
   flex-wrap: wrap;
 }
 
-header .navbar-brand {
+/*header .navbar-brand {
   font-size: 1.8rem !important;
   font-weight: bold;
   color: white !important;
   text-decoration: none !important;
   margin-right: 2rem;
-}
+}*/
 
 header .navbar-nav {
   display: flex;

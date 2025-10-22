@@ -4,51 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orion Data Insights</title>
-  <link rel="stylesheet" href="estilo_versao2.css">
+  <link rel="stylesheet" href="estilo.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> 
   <style>
     :root {
-      --bs-primary-bg-subtle: #193969 !important;
+      --bs-primary-bg-subtle: #0443a1 !important;
+      --bs-info-bg-emphasis: #011d25 !important;
+      --bs-info-bg-subtle: #b5f5f5 !important;
     }
   </style>
 </head>
 
 <body class="bg-primary-subtle">
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">Orion Data Insights</a>
+              <a class="navbar-brand text-light fs-1 fw-bold"  href="index.html">Orion Data Insights</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
+                <span class="bi-three-dots-vertical text-light"></span>
               </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
-                     <a class="nav-link active" aria-current="page" href="#sobre">Sobre</a>
+                     <a class="nav-link text-light fs-5 fw-bold active" aria-current="page" href="#sobre">Sobre</a>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item btn-group dropend ">
+                      <a class="nav-link text-light fs-5 fw-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                            Aplicativos
                       </a>
-                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="calendario.html">Calendário Afetivo</a></li>
-                         <li><a class="dropdown-item" href="estorias.html">Uma Estória por Dia</a></li>
-                         <li><hr class="dropdown-divider"></li> 
-                         <li><a class="dropdown-item" href="tarefas.html">Tarefas de Casa</a></li>
-                          <li><a class="dropdown-item" href="transcritor.html">Transcritor de Áudios</a></li>
+                     <ul class="dropdown-menu  bg-info-subtle " aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-info-emphasis fs-5 " href="calendario.html">Calendário Afetivo</a></li>
+                        <li><a class="dropdown-item text-info-emphasis fs-5 " href="estorias.html">Uma Estória por Dia</a></li>
+                        <li><a class="dropdown-item text-info-emphasis fs-5 " href="tarefas.html">Tarefas de Casa</a></li>
+                        <li><a class="dropdown-item text-info-emphasis fs-5 " href="transcritor.html">Transcritor de Áudios</a></li>
                      </ul>
                     </li>
                     <li class="nav-item">
-                     <a class="nav-link" href="#fale">Fale Conosco</a>
+                     <a class="nav-link text-light fs-5 fw-bold" href="#fale">Fale Conosco</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
+                        <a class="nav-link text-light fs-5 fw-bold" href="#contato">Contato</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
+
+            <button class="btn btn-light btn-danger text-dark m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#login" aria-controls="offcanvasExample">
+              Login
+            </button>
             </div>
             </div>
         </nav>
@@ -59,41 +66,6 @@
         <p>Criamos soluções digitais acessíveis e humanas.</p>
         <a href="#produtos" class="botao">Conheça nossos aplicativos</a>
     </section>
-    
-    <section class="container my-5">
-    
-            <section id="meuCarrossel" class="carousel slide carousel-fade" >
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#meuCarrossel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#meuCarrossel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#meuCarrossel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#meuCarrossel" data-bs-slide-to="3" aria-label="Slide 4"></button>               
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img1.png" class="d-block w-100" alt="Lembrar datas importantes. Celebrar a vida.">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img2.png" class="d-block w-100" alt="Estórias envolventes que auxiliam no aprendizado">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img3.png" class="d-block w-100" alt="Ajuda a controlar melhor as tarefas dos filhos">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img4.png" class="d-block w-100" alt="Transcreve audios de whatsapp para quando você precisar procurar a conversa certa">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#meuCarrossel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#meuCarrossel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </section>
-    
-     </section>
     
     <section id="sobre">
         <h2>Sobre a Orion</h2>
@@ -111,24 +83,36 @@
            <h3>Calendário Afetivo</h3>
            <p>Ajuda o usuário a lembrar datas importantes com fotos e mensagens personalizadas.</p>
            <img src="calendario.png" alt="Calendário Afetivo"> 
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+                          Baixar
+            </button>
           </div>
 
          <div class="card" id="produto2">          
           <h3>Uma Estória por dia</h3>
           <p>Auxilia usuarios com dificuldade na leitura usando comandos intuitivos.</p>
           <img src="assistente.png" alt="Assistente Pessoal Simples" >
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+                          Baixar
+          </button>
          </div>
          
          <div class="card" id="produto3">           
            <h3>Tarefas de Casa</h3>
            <p>Ajuda o usuário lembrar seus filhos a fazerem as tarefas de casa.</p>
            <img src="tarefas.png" alt="Tarefas de Casa" >
+           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+                          Baixar
+            </button>
           </div>
 
          <div class="card" id="produto4">
            <h3>Transcritor de Audios do WhatsApp</h3>
            <p>Ajuda a revisar diálogos longos ou guardar registros importantes de forma organizada.</p>
            <img src="transcritor.png" alt="Transcritor de audios" >
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+                          Baixar
+            </button>
          </div>
        </div>
     </section>
@@ -149,12 +133,65 @@
               </fieldset>
             </form>
     </section>
+    <footer id="contato">
+        <h2>Contato</h2>
+        <p>E-mail: contato@oriondatainsights.com</p>
+        <p><i class="bi bi-linkedin"> </i> <i class="bi bi-instagram"></i> <i class="bi bi-github"></i> 
+        <i class="bi bi-facebook"></i> <i class="bi bi-twitter-x"></i>  <i class="bi bi-whatsapp"></i> </p>
+    </footer>
 
-  <footer id="contato">
-      <h2>Contato</h2>
-      <p>E-mail: contato@oriondatainsights.com</p>
-      <p>LinkedIn | GitHub | Instagram</p>
-  </footer>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="login" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Login/Sign Up</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Form de Login -->
+      <form>
+          <div class="mb-3">
+              <label for="emailInput" class="form-label">Email</label>
+              <input type="email" class="form-control" id="emailInput" placeholder="Digite seu email">
+          </div>
+          <div class="mb-3">
+              <label for="passwordInput" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="passwordInput" placeholder="Digite sua senha">
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+      </form>
+      <hr>
+      <!-- Form de Cadastro -->
+      <form>
+          <div class="mb-3">
+              <label for="nameInput" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nameInput" placeholder="Digite seu nome">
+          </div>
+          <div class="mb-3">
+              <label for="emailRegInput" class="form-label">Email</label>
+              <input type="email" class="form-control" id="emailRegInput" placeholder="Digite seu email">
+          </div>
+          <div class="mb-3">
+              <label for="passwordRegInput" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="passwordRegInput" placeholder="Digite sua senha">
+          </div>
+          <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+      </form>
+  </div>
+  </div>
+      <!-- Modal -->
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Carrinho atualizado</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Produto adicionado no carrinho com sucesso!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
