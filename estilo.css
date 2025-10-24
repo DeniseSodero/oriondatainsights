@@ -232,3 +232,29 @@ footer {
     width: 100%;
   }
 }
+
+
+/* ===============================
+   Cores do Accordion
+   =============================== */
+   .accordion-button {
+    background-color: #dcedf5 !important; /* azul clarinho */
+    color: #003366 !important; /* texto azul escuro */
+    font-weight: 600;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #d3fde4 !important; /* verde bem claro quando aberto */
+    color: #002200 !important;
+  }
+  
+  .accordion-body {
+    background-color: #e6f7f5 !important; /* fundo cinza claro */
+    color: #222 !important;
+  }
+  
+  .accordion-item {
+    border: 1px solid #b0c4de; /* borda azul suave */
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }

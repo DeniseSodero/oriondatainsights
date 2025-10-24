@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denise DEV - Portfólio</title>
+    
+    <!-- Bootstrap CSS (via CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Ícones do Bootstrap (Opcional, mas bom para links) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos customizados */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Ajuste para a barra de navegação fixa */
+            padding-top: 56px; 
+            background-color: #f8f9fa; /* Um cinza bem claro no fundo */
+        }
+
+        /* Ajuste de espaçamento para as seções */
+        section {
+            padding: 60px 0;
+        }
+
+        /* Seção Hero (Home) */
+        .hero-section {
+            background-color: #1e6479; /* Cor escura de fundo */
+            color: white;
+            padding: 80px 0;
+            height: calc(100vh - 56px); /* Altura total da tela menos a navbar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #ced4da; /* Um cinza mais claro */
+        }
+
+        .hero-section .btn {
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Cor de destaque */
+        .text-primary {
+             color: #0d6efd !important; /* Azul padrão do Bootstrap */
+        }
+        .bg-primary {
+             background-color: #0d6efd !important;
+        }
+         .btn-primary {
+             background-color: #0d6efd;
+             border-color: #0d6efd;
+         }
+        .btn-primary:hover {
+             background-color: #0b5ed7;
+             border-color: #0a58ca;
+         }
+
+        /* Seção de Habilidades */
+        .progress {
+            height: 25px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+        }
+        .progress-bar {
+            font-weight: 600;
+        }
+        
+        /* Seção de Projetos */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .card-img-top {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            height: 200px;
+            object-fit: cover; /* Garante que a imagem cubra o espaço */
+        }
+
+        /* Seção de Contato */
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #343a40;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #0d6efd; /* Azul ao passar o mouse */
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #072849;
+            color: #ced4da;
+            padding: 30px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. Barra de Navegação Fixa -->
+    <nav class="navbar navbar-expand-lg navbar-info bg-info fixed-top shadow-sm text-light">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Denise DEV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projetos">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Seção Hero (Home) -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-4">Transformando ideias em experiências digitais fluidas.</h1>
+            <p class="lead my-4">Especialista no desenvolvimento de aplicativos multiplataforma unindo código limpo, design intuitivo e foco total na experiência do usuário.</p>
+            <a href="#projetos" class="btn btn-primary btn-lg mx-2">Veja meus projetos</a>
+            <a href="#contato" class="btn btn-outline-light btn-lg mx-2">Entre em contato</a>
+        </div>
+    </section>
+
+    <!-- 3. Seção Sobre Mim -->
+    <section id="sobre" class="bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <!-- Placeholder de Imagem -->
+                    <img src="https://placehold.co/500x500/0d6efd/white?text=Denise&font=inter" class="img-fluid rounded-circle shadow" alt="Foto de Denise">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-3">Olá, eu sou a Denise.</h2>
+                    <p class="text-muted lead mb-4">Sou uma desenvolvedora apaixonada por tecnologia e como ela pode ser usada para simplificar a vida das pessoas. Meu foco principal hoje é o desenvolvimento mobile com Flutter, onde busco sempre aplicar as melhores práticas de engenharia de software.</p>
+                    <p class="text-muted">Acredito que um bom aplicativo é aquele que o usuário nem percebe que está usando: ele apenas funciona, de forma rápida e intuitiva. Estou sempre em busca de novos desafios e pronto para colaborar em projetos que façam a diferença.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Seção Habilidades -->
+    <section id="habilidades">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Minhas Habilidades</h2>
+                <p class="lead text-muted">Tecnologias e competências que utilizo no dia a dia.</p>
+            </div>
+
+            <div class="row">
+                <!-- Coluna 1 -->
+                <div class="col-md-6">
+                    <!-- Habilidade 1 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Flutter</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
+                    </div>
+                    <!-- Habilidade 2 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Dart</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">95%</div>
+                        </div>
+                    </div>
+                    <!-- Habilidade 3 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Firebase</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Coluna 2 -->
+                <div class="col-md-6">
+                    <!-- Habilidade 4 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Gerenciamento de Estado (BLoC/Riverpod)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                    </div>
+                    <!-- Habilidade 5 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">APIs (REST/GraphQL)</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                        </div>
+                    </div>
+                    <!-- Habilidade 6 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Git & GitHub</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Seção Projetos -->
+    <section id="projetos" class="bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Meus Trabalhos</h2>
+                <p class="lead text-muted">Alguns dos trabalhos que desenvolvi.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Projeto 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/343a40/white?text=Projeto+1&font=inter" class="card-img-top" alt="Imagem do Projeto 1">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Apps Inclusivos</h5>
+                            <p class="card-text text-muted">Aplicativos multiplataforma (iOS/Android) focado em ajudar pessoas neuroatipicas a usufluirem dos benefícios da internet.</p>
+                            <div class="mt-auto">
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">Flutter</span>
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">Firebase</span>
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">BLoC</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top-0">
+                             <a href="#" class="btn btn-outline-primary btn-sm">Ver na App Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/0d6efd/white?text=Projeto+2&font=inter" class="card-img-top" alt="Imagem do Projeto 2">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">App Transcritor de Audios de Whatsapp</h5>
+                            <p class="card-text text-muted">Aplicativo multiplataforma (iOS/Android) focado em transcrever mensagens de audio do Whatsapp para ajudar a encontrar 
+                                mensagens importantes sem precisar ouvir todas as mensages.</p>
+                             <div class="mt-auto">
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">Flutter</span>
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">Riverpod</span>
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">API REST</span>
+                            </div>
+                        </div>
+                         <div class="card-footer bg-white border-top-0">
+                             <a href="#" class="btn btn-outline-primary btn-sm">Ver na App Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/6c757d/white?text=Projeto+3&font=inter" class="card-img-top" alt="Imagem do Projeto 3">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">App de Receitas</h5>
+                            <p class="card-text text-muted">Aplicativo de descoberta de receitas, consumindo uma API pública (GraphQL) e salvando favoritos localmente.</p>
+                             <div class="mt-auto">
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">Flutter</span>
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">GraphQL</span>
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-1">SQLite</span>
+                            </div>
+                        </div>
+                         <div class="card-footer bg-white border-top-0">
+                             <a href="#" class="btn btn-outline-primary btn-sm">Ver no GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Seção Contato -->
+    <section id="contato">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Vamos Conversar</h2>
+                <p class="lead text-muted">Estou disponível para novos projetos e colaborações.</p>
+            </div>
+            
+            <div class="row justify-content-center">                                  
+                    <!-- Links Sociais -->
+                    <div class="text-center mt-5">
+                        <p class="lead">Me encontre nas redes sociais:</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="mailto:seu-email@exemplo.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Rodapé -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 Denise DEV. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (via CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Script para ativar o scroll suave (Opcional) -->
+    <script>
+        // Adiciona scroll suave para os links da navbar
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

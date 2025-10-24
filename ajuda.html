@@ -1,0 +1,156 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memórias Compartilhadas - Orion Data Insights</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Ícones do Font Awesome (necessário para os ícones nas funcionalidades) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --bs-primary-bg-subtle: #0443a1 !important;
+      --bs-info-bg-emphasis: #011d25 !important;
+      --bs-info-bg-subtle: #b5f5f5 !important;
+    }
+  </style>
+</head>
+
+<body class="bg-primary">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary-subtle">
+            <div class="container-fluid">
+              <a class="navbar-brand text-light fs-1 fw-bold"  href="index.html">Orion Data Insights</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="bi-three-dots-vertical text-light"></span>
+              </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                     <a class="nav-link text-light fs-5 fw-bold active" aria-current="page" href="index.html#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item btn-group dropend">
+                      <a class="nav-link text-light fs-5 fw-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Aplicativos
+                      </a>
+                     <ul class="dropdown-menu bg-info-subtle" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-info-emphasis fs-5 " href="calendario.html">Calendário Afetivo</a></li>
+                         <li><a class= "dropdown-item text-info-emphasis fs-5 " href="historias.html">Uma História por Dia</a></li>
+                         <li><a class= "dropdown-item text-info-emphasis fs-5 " href="tarefas.html">Tarefas de Casa</a></li>
+                          <li><a class="dropdown-item text-info-emphasis fs-5 " href="transcritor.html">Transcritor de Áudios</a></li>
+                     </ul>
+                    </li>
+                    <li class="nav-item">
+                     <a class="nav-link text-light fs-5 fw-bold" href="index.html#fale">Fale Conosco</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light fs-5 fw-bold" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </form>
+
+            <button class="btn btn-light btn-ouline-danger text-dark m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#login" aria-controls="offcanvasExample">
+              Login
+            </button>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 app-page text-light">
+        <h1 class="text-center mb-4">Ajuda</h1>
+        <p class="lead text-center">Tecnologia para quem é importa.</p>
+        
+        <p class="text-light text-center fs-2 fw-bold"> FAQ></p>
+        <div class="accordion mx-4" id="faqAccordion">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                Os aplicativos da Orion são gratuitos?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                A maioria dos nossos aplicativos possui uma versão gratuita com recursos básicos. Alguns oferecem funções adicionais em versões premium.
+              </div>
+            </div>
+          </div>
+        
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                Em quais dispositivos posso usar os aplicativos?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Todos os nossos aplicativos são compatíveis com dispositivos Android. Algumas versões para iOS estão em desenvolvimento.
+              </div>
+            </div>
+          </div>
+        
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                Como posso entrar em contato para suporte técnico?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Você pode entrar em contato conosco pelo formulário na seção <strong>“Fale Conosco”</strong> ou enviar um e-mail para <a href="mailto:contato@oriondatainsights.com">contato@oriondatainsights.com</a>.
+              </div>
+            </div>
+          </div>
+        
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                Como faço para atualizar meus aplicativos?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                As atualizações são disponibilizadas automaticamente pela Google Play Store. Basta manter a opção de atualização automática ativada.
+              </div>
+            </div>
+          </div>
+        
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                Posso sugerir novos recursos para os aplicativos?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Sim! Adoramos ouvir nossos usuários. Envie sua sugestão pelo formulário de contato ou por e-mail. Todas as ideias são avaliadas pela nossa equipe de desenvolvimento.
+              </div>
+            </div>
+          </div>
+        
+        </div>
+    </main>
+
+    <footer id="contato">
+        <h2>Contato</h2>
+        <p>E-mail: contato@oriondatainsights.com</p>
+        <p><i class="bi bi-linkedin"> </i> <i class="bi bi-instagram"></i> <i class="bi bi-github"></i> 
+        <i class="bi bi-facebook"></i> <i class="bi bi-twitter-x"></i>  <i class="bi bi-whatsapp"></i> </p>
+    </footer>
+    <!-- CORREÇÃO: Adicionando o script do Bootstrap para o dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

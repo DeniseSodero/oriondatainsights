@@ -42,7 +42,7 @@
                      </ul>
                     </li>
                     <li class="nav-item">
-                     <a class="nav-link text-light fs-5 fw-bold" href="#fale">Fale Conosco</a>
+                     <a class="nav-link text-light fs-5 fw-bold" href="ajuda.html">Ajuda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light fs-5 fw-bold" href="#contato">Contato</a>
@@ -53,9 +53,9 @@
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
 
-            <button class="btn btn-light btn-danger text-dark m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#login" aria-controls="offcanvasExample">
-              Login
-            </button>
+                <button class="btn btn-light btn-danger text-dark m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#loginOffcanvas" aria-controls="loginOffcanvas">
+                  Login
+                </button>
             </div>
             </div>
         </nav>
@@ -133,51 +133,69 @@
               </fieldset>
             </form>
     </section>
-    <footer id="contato">
+    <footer class="bg-primary"     id="contato">
         <h2>Contato</h2>
         <p>E-mail: contato@oriondatainsights.com</p>
         <p><i class="bi bi-linkedin"> </i> <i class="bi bi-instagram"></i> <i class="bi bi-github"></i> 
         <i class="bi bi-facebook"></i> <i class="bi bi-twitter-x"></i>  <i class="bi bi-whatsapp"></i> </p>
+
+
+
     </footer>
 
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="login" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Login/Sign Up</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <!-- Offcanvas Login -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="loginOffcanvas" aria-labelledby="loginOffcanvasLabel">
+        <div class="offcanvas-header bg-primary text-light">
+            <h5 class="offcanvas-title" id="loginOffcanvasLabel">LOGIN</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Form de Login -->
+            <form>
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="Digite seu email">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3" id="btnLogin">Entrar</button>
+            </form>
+            <hr>
+            <p>Não possui uma conta?</p>
+            <a class="text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#cadastro" aria-controls="loginOffcanvas">
+                Cadastre-se agora
+            </a>
+        </div>
     </div>
-    <div class="offcanvas-body">
-      <!-- Form de Login -->
-      <form>
-          <div class="mb-3">
-              <label for="emailInput" class="form-label">Email</label>
-              <input type="email" class="form-control" id="emailInput" placeholder="Digite seu email">
-          </div>
-          <div class="mb-3">
-              <label for="passwordInput" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="passwordInput" placeholder="Digite sua senha">
-          </div>
-          <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
-      </form>
-      <hr>
-      <!-- Form de Cadastro -->
-      <form>
-          <div class="mb-3">
-              <label for="nameInput" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="nameInput" placeholder="Digite seu nome">
-          </div>
-          <div class="mb-3">
-              <label for="emailRegInput" class="form-label">Email</label>
-              <input type="email" class="form-control" id="emailRegInput" placeholder="Digite seu email">
-          </div>
-          <div class="mb-3">
-              <label for="passwordRegInput" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="passwordRegInput" placeholder="Digite sua senha">
-          </div>
-          <button type="submit" class="btn btn-success w-100">Cadastrar</button>
-      </form>
-  </div>
-  </div>
-      <!-- Modal -->
+    <!-- Offcanvas Cadastro -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cadastro" aria-labelledby="loginOffcanvasLabel">
+        <div class="offcanvas-header bg-primary text-light">
+            <h5 class="offcanvas-title" id="loginOffcanvasLabel">SIGN UP</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Form de Cadastro -->
+            <form>
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nameInput" placeholder="Digite seu nome">
+                </div>
+                <div class="mb-3">
+                    <label for="emailRegInput" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="emailRegInput" placeholder="Digite seu email">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordRegInput" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="passwordRegInput" placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn btn-success w-100" id="btnCadastro">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+  <!-- ========== MODAL - CONFIRMAÇÃO DE COMPRA ========== -->
+  <!-- Modal: Janela pop-up sobre o conteúdo atual -->
   <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -188,6 +206,37 @@
         <div class="modal-body">
           <p>Produto adicionado no carrinho com sucesso!</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== TOASTS - NOTIFICAÇÕES ========== -->
+  <!-- Toast: Notificações temporárias que aparecem no canto da tela -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <!-- Toast para confirmação de cadastro -->
+    <div id="registerToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success text-white">
+        <i class="bi-person-check-fill me-2"></i>
+        <strong class="me-auto">Cadastro Realizado</strong>
+        <small>Agora</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Sua conta foi criada com sucesso!
+      </div>
+    </div>
+
+    <!-- Toast para confirmação de login -->
+    <div id="loginToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-primary text-white">
+        <i class="bi-box-arrow-in-right me-2"></i>
+        <strong class="me-auto">Login Efetuado</strong>
+        <small>Agora</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Bem-vindo(a) de volta!
       </div>
     </div>
   </div>
