@@ -256,6 +256,84 @@ button:hover {
 }
 
 /* ===============================
+   Estilos para o Grid do PDF
+   =============================== */
+
+/* Este é o container que será "fotografado" */
+/* Ele fica fora da tela (off-screen) para não atrapalhar o usuário */
+.calendario-pdf-container {
+  position: absolute;
+  left: -9999px; /* Joga para fora da tela */
+  top: 0;
+  width: 794px; /* Largura de um A4 em pixels (aprox.) */
+  padding: 20px;
+  background-color: #ffffff;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.calendario-pdf-container h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--azul-escuro); /* */
+}
+
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid #ccc;
+}
+
+.dia-semana {
+  background-color: var(--azul-medio); /* */
+  color: var(--branco); /* */
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 4px;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.dia-celula {
+  border: 1px solid #eee;
+  height: 120px;
+  padding: 4px;
+  font-size: 12px;
+  /* Permite que o conteúdo interno flua */
+  display: flex;
+  flex-direction: column;
+}
+
+.dia-numero {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--cinza-escuro); /* */
+}
+
+/* Célula de um dia que não pertence ao mês */
+.dia-celula.outro-mes {
+  background-color: #f9f9f9;
+}
+
+.aniversariante-pdf {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  overflow: hidden;
+}
+
+.aniversariante-pdf img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* ===============================
    Formulário de Contato
    =============================== */
 #fale {
