@@ -1,62 +1,125 @@
 /* ===============================
+   PALETA DE CORES ORION
+   =============================== */
+:root {
+  /* Azuis Principais */
+  --azul-escuro: #0a4d68;      /* Azul profundo principal */
+  --azul-medio: #088395;       /* Azul médio para destaques */
+  --azul-claro: #05bfdb;       /* Azul claro para acentos */
+  --azul-suave: #e8f4f8;       /* Azul muito claro para fundos */
+  
+  /* Verdes Complementares */
+  --verde-principal: #2d9596;  /* Verde-azulado para CTAs */
+  --verde-escuro: #1a5f5f;     /* Verde escuro para footer */
+  --verde-claro: #9ee5d7;      /* Verde claro para destaques */
+  --verde-suave: #e0f7f4;      /* Verde suave para backgrounds */
+  
+  /* Neutros */
+  --cinza-escuro: #2c3e50;     /* Textos principais */
+  --cinza-medio: #34495e;      /* Textos secundários */
+  --cinza-claro: #ecf0f1;      /* Fundos suaves */
+  --branco: #ffffff;
+  --preto: #1a1a1a;
+  
+  /* Bootstrap Override */
+  --bs-primary: #088395;
+  --bs-primary-bg-subtle: #0a4d68 !important;
+  --bs-info-bg-emphasis: #1a5f5f !important;
+  --bs-info-bg-subtle: #e0f7f4 !important;
+  --bs-success: #2d9596;
+}
+
+/* ===============================
    Configurações Gerais
    =============================== */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #fafafc !important;
-  color: #222;
+  background-color: var(--cinza-claro) !important;
+  color: var(--cinza-escuro);
 }
 
 /* ===============================
-   Hero
+   Hero Section
    =============================== */
 .hero {
-  background-color: #1da8ca;
-  color: white;
+  background: linear-gradient(135deg, var(--azul-medio) 0%, var(--verde-principal) 100%);
+  color: var(--branco);
   text-align: center;
   padding: 4rem 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
 }
 
 .botao,
 button {
   display: inline-block;
-  padding: 0.8rem 1.2rem;
-  border-radius: 5px;
-  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: var(--branco);
   border: none;
   cursor: pointer;
-  background-color: #027d99;
+  background-color: var(--verde-principal);
   margin-top: 1rem;
   text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(45, 149, 150, 0.3);
+  transition: all 0.3s ease;
 }
 
 .botao:hover,
 button:hover {
-  background-color: #024255;
-  transform: scale(1.05);
-  transition: 0.3s;
+  background-color: var(--verde-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(45, 149, 150, 0.4);
+  color: var(--branco);
 }
 
-
 /* ===============================
-   Sobre
+   Sobre Section
    =============================== */
 #sobre {
-  background-color: #065858 !important;
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--verde-escuro) 100%);
   padding: 3rem 2rem;
   text-align: center;
-  color: #f9f9fc;
-  }
+  color: var(--branco);
+}
 
+#sobre h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+#sobre p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 /* ===============================
-   Produtos
+   Produtos Section
    =============================== */
 #produtos {
-  padding: 1rem 1rem;
-  background-color: #c7b7f3;
-  color: rgba(96, 14, 128, 0.829);
+  padding: 3rem 1rem;
+  background: linear-gradient(180deg, var(--azul-suave) 0%, var(--verde-suave) 100%);
+  color: var(--cinza-escuro);
+}
+
+#produtos h2 {
+  text-align: center;
+  color: var(--azul-escuro);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
 }
 
 #produto1,
@@ -75,75 +138,112 @@ button:hover {
 }
 
 .card {
-  background: rgba(96, 14, 128, 0.829) !important;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.1);
+  background: var(--branco) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(8, 131, 149, 0.15);
   max-width: 19rem;
   text-align: center;
-  padding: 0.2rem;
-  transition: 0.3s;
-  color: #e8e8ec !important;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  color: var(--cinza-escuro) !important;
+  border: 2px solid var(--azul-claro);
 }
 
 .card:hover {
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.5rem);
+  box-shadow: 0 8px 24px rgba(8, 131, 149, 0.25);
+  transform: translateY(-8px);
+  border-color: var(--verde-principal);
+}
+
+.card h3 {
+  color: var(--azul-escuro);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--cinza-medio);
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 .card img {
   width: 100%;
-  border-radius: 0.3rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card button {
+  background-color: var(--azul-medio);
+}
+
+.card button:hover {
+  background-color: var(--verde-principal);
 }
 
 /* ===============================
-   FEATURE BOXES (Novas Funcionalidades)
+   Feature Boxes
    =============================== */
 .feature-box {
-  background-color: #ffffff; /* Fundo branco para alto contraste */
+  background-color: var(--branco);
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  transition: transform 0.3s;
-  border-left: 5px solid #00a8cc; /* Linha de destaque */
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  border-left: 5px solid var(--azul-claro);
 }
 
 .feature-box:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(8, 131, 149, 0.2);
+  border-left-color: var(--verde-principal);
 }
 
 .feature-icon {
-    font-size: 2.5rem;
-    color: #03569b; /* Cor principal da marca */
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: var(--azul-medio);
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.feature-box:hover .feature-icon {
+  color: var(--verde-principal);
 }
 
 .feature-box h4 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 5px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-top: 0;
+  margin-bottom: 0.8rem;
 }
 
 .feature-box p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 0;
+  font-size: 1rem;
+  color: var(--cinza-medio);
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 
 /* ===============================
    Formulário de Contato
    =============================== */
 #fale {
-  padding: 2rem 2rem;
-  background-color: #e7e0ee;
-  color: #050fa3;
-  
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--verde-suave) 0%, var(--azul-suave) 100%);
+  color: var(--cinza-escuro);
+}
+
+#fale h2 {
+  text-align: center;
+  color: var(--azul-escuro);
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 .form-fale {
-  max-width: 25rem;
+  max-width: 28rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -151,50 +251,191 @@ button:hover {
 }
 
 .form-fale button {
-  margin-top: 1rem;        /* espaço entre o botão e o campo acima */
-  padding: 0.6rem 1.2rem;  /* ajuste de altura e largura */
-  border-radius: 8px;      /* bordas arredondadas */
-  border: none;            /* remove borda padrão */
-  background-color: #027d99; /* cor de fundo */
-  color: white;            /* cor do texto */
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--verde-principal);
+  color: var(--branco);
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .form-fale button:hover {
-  background-color: #024255; /* cor ao passar o mouse */
-  transform: scale(1.05);
+  background-color: var(--verde-escuro);
+  transform: scale(1.02);
 }
 
 fieldset {
-  border: 0.2rem solid #00a8cc;
-  border-radius: 1.5rem;
+  border: 2px solid var(--azul-claro);
+  border-radius: 12px;
   padding: 1.5rem;
+  background-color: var(--branco);
+}
+
+legend {
+  color: var(--azul-escuro);
+  font-weight: 700;
+  padding: 0 0.5rem;
 }
 
 label {
-  font-weight: bold;
+  font-weight: 600;
   display: block;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: var(--azul-escuro);
 }
 
 input {
   display: block;
   width: 95%;
-  padding: 0.5rem;
-  border: 0.15rem solid #0d6879;
-  border-radius: 0.5rem;
+  padding: 0.7rem;
+  border: 2px solid var(--azul-claro);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--verde-principal);
+  box-shadow: 0 0 0 3px rgba(45, 149, 150, 0.1);
 }
 
 /* ===============================
    Rodapé
    =============================== */
 footer {
-  background-color: #034d8a;
-  color: white;
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--verde-escuro) 100%);
+  color: var(--branco);
   text-align: center;
   padding: 2rem 1rem;
+}
+
+footer h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  opacity: 0.95;
+}
+
+footer i {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+footer i:hover {
+  color: var(--verde-claro);
+  transform: scale(1.2);
+}
+
+/* ===============================
+   Accordion (FAQ)
+   =============================== */
+.accordion-button {
+  background-color: var(--azul-suave) !important;
+  color: var(--azul-escuro) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--verde-suave) !important;
+  color: var(--verde-escuro) !important;
+  box-shadow: inset 0 -1px 0 rgba(45, 149, 150, 0.125);
+}
+
+.accordion-button:hover {
+  background-color: var(--verde-suave) !important;
+}
+
+.accordion-body {
+  background-color: var(--branco) !important;
+  color: var(--cinza-escuro) !important;
+  line-height: 1.7;
+}
+
+.accordion-item {
+  border: 1px solid var(--azul-claro);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+/* ===============================
+   Navbar Customizations
+   =============================== */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--azul-claro);
+}
+
+.dropdown-item:hover {
+  background-color: var(--verde-suave) !important;
+  color: var(--verde-escuro) !important;
+}
+
+/* ===============================
+   Botões Bootstrap Override
+   =============================== */
+.btn-success {
+  background-color: var(--verde-principal) !important;
+  border-color: var(--verde-principal) !important;
+}
+
+.btn-success:hover {
+  background-color: var(--verde-escuro) !important;
+  border-color: var(--verde-escuro) !important;
+}
+
+.btn-outline-success {
+  color: var(--verde-principal) !important;
+  border-color: var(--verde-principal) !important;
+}
+
+.btn-outline-success:hover {
+  background-color: var(--verde-principal) !important;
+  color: var(--branco) !important;
+}
+
+.btn-primary {
+  background-color: var(--azul-medio) !important;
+  border-color: var(--azul-medio) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--verde-principal) !important;
+  border-color: var(--verde-principal) !important;
+}
+
+/* ===============================
+   App Pages (páginas internas)
+   =============================== */
+.app-page {
+  min-height: 60vh;
+}
+
+.app-page h1 {
+  color: var(--branco);
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.app-page .lead {
+  color: var(--verde-claro);
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 /* ===============================
@@ -233,28 +474,33 @@ footer {
   }
 }
 
+/* ===============================
+   Utilitários
+   =============================== */
+.bg-primary {
+  background: linear-gradient(135deg, var(--azul-medio) 0%, var(--verde-principal) 100%) !important;
+}
+
+.bg-primary-subtle {
+  background-color: var(--azul-escuro) !important;
+}
+
+.text-light {
+  color: var(--branco) !important;
+}
 
 /* ===============================
-   Cores do Accordion
+   Dropdown com Hover (Desktop)
    =============================== */
-   .accordion-button {
-    background-color: #dcedf5 !important; /* azul clarinho */
-    color: #003366 !important; /* texto azul escuro */
-    font-weight: 600;
+@media (min-width: 992px) {
+  /* Remove a seta (setinha) do dropdown */
+  .navbar .nav-item .dropdown-toggle::after {
+    display: none;
   }
-  
-  .accordion-button:not(.collapsed) {
-    background-color: #d3fde4 !important; /* verde bem claro quando aberto */
-    color: #002200 !important;
+
+  /* Exibe o menu no hover */
+  .navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Ajuste fino de posição */
   }
-  
-  .accordion-body {
-    background-color: #e6f7f5 !important; /* fundo cinza claro */
-    color: #222 !important;
-  }
-  
-  .accordion-item {
-    border: 1px solid #b0c4de; /* borda azul suave */
-    border-radius: 0.5rem;
-    overflow: hidden;
-  }
+}

@@ -1,0 +1,93 @@
+/* ===================================
+   jogo_logico.css
+   Estilos para a demo da grade lógica
+   =================================== */
+
+#grid-container table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Tira o espaçamento duplo das bordas */
+  background-color: #fff;
+  /* Garante que a tabela não "esprema" */
+  table-layout: fixed;
+}
+
+#grid-container th,
+#grid-container td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+  height: 50px;
+  /* Para textos longos não quebrarem a palavra no meio */
+  overflow-wrap: break-word;
+}
+
+/* Cabeçalho (Nomes, Locais, etc.) */
+#grid-container th {
+  background-color: var(--azul-suave);
+  /* Puxa da sua paleta */
+  color: var(--azul-escuro);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Célula do canto superior esquerdo (vazia) */
+#grid-container th:first-child {
+  background-color: transparent;
+  border: none;
+}
+
+/* Células clicáveis */
+#grid-container td.clicavel {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#grid-container td.clicavel:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estados de 'Sim' (✓) e 'Não' (X) */
+#grid-container td.estado-sim {
+  color: var(--verde-principal);
+  /* Puxa da sua paleta */
+}
+
+#grid-container td.estado-nao {
+  color: #e74c3c;
+  /* Um vermelho para o 'Não' */
+}
+/* ===================================
+   Estilos da Paleta de Ferramentas
+   =================================== */
+
+#tool-palette .btn {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Sobrescreve o estilo "outline" padrão do Bootstrap 
+  quando o botão NÃO está ativo
+*/
+#tool-palette .btn:not(.active) {
+  background-color: #fff;
+}
+
+/* Estilo para o botão de "Sim" (✓) ATIVO 
+*/
+#tool-palette #btn-tool-sim.active {
+  background-color: var(--verde-principal); /* Puxa da sua paleta */
+  color: #fff;
+  border-color: var(--verde-principal);
+}
+
+/* Estilo para o botão de "Não" (X) ATIVO 
+*/
+#tool-palette #btn-tool-nao.active {
+  background-color: #e74c3c; /* Vermelho */
+  color: #fff;
+  border-color: #e74c3c;
+}
