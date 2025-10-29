@@ -1,0 +1,19 @@
+{
+  "titulo": "Lanche da Tarde",
+  "categorias": {
+    "Pessoas": ["Ana", "Beto", "Clara"],
+    "Comidas": ["Maçã", "Pão", "Suco"],
+    "Animais": ["Gato", "Cachorro", "Pássaro"]
+  },
+  "pistas": [
+    "Beto tem o Cachorro.",
+    "A pessoa que comeu Pão está com o Cachorro.",
+    "Clara não tem o Gato e não comeu Maçã.",
+    "Ana tem o Gato."
+  ],
+  "solucao": [
+    { "Pessoas": "Ana", "Comidas": "Maçã", "Animais": "Gato" },
+    { "Pessoas": "Beto", "Comidas": "Pão", "Animais": "Cachorro" },
+    { "Pessoas": "Clara", "Comidas": "Suco", "Animais": "Pássaro" }
+  ]
+}
