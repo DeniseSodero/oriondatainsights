@@ -147,6 +147,8 @@ button:hover {
   transition: all 0.3s ease;
   color: var(--cinza-escuro) !important;
   border: 2px solid var(--azul-claro);
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -167,10 +169,28 @@ button:hover {
   margin-bottom: 1rem;
 }
 
+/* 1. Estilo do Ícone */
+.card .card-icon {
+  font-size: 48px;
+  color: var(--azul-medio); /* */
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-icon {
+  color: var(--verde-principal); /* */
+}
+
+/* 2. Estilo do Texto "Pitch" */
+/* (Usamos .card-pitch para não conflitar com o .card p) */
+.card .card-pitch {
+  color: var(--cinza-medio); /* */
+  line-height: 1.6;
+  margin-bottom: 1.5rem; /* Mais espaço antes do botão */
+  flex-grow: 1; /* Este é o truque para alinhar os botões */
+}
 .card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  display: none; /* */
 }
 
 .card button {
@@ -181,6 +201,15 @@ button:hover {
   background-color: var(--verde-principal);
 }
 
+/* 4. Ajustar o botão .botao para combinar com o estilo antigo do .card button */
+.card .botao {
+  background-color: var(--azul-medio); /* */
+  margin-top: 0; /* Remove a margem padrão do .botao */
+}
+
+.card .botao:hover {
+  background-color: var(--verde-principal); /* */
+}
 /* ===============================
    Feature Boxes
    =============================== */
