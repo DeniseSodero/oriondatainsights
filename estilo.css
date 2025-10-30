@@ -557,13 +557,28 @@ footer i:hover {
 /* Este seletor mira na imagem que está dentro do link .navbar-brand */
 .navbar-brand img {
   /* Define a altura do logo. 45px é um bom ponto de partida. */
-  height: 75px;
+  height: 4.7rem;
   
   /* Garante que a largura mude proporcionalmente */
   width: auto; 
 
   /* Remove qualquer borda que o navegador possa adicionar */
   border: none;
+}
+
+/* ===============================
+   Estilos para o Cropper.js Modal
+   =============================== */
+
+/* Garante que a imagem do cropper não estoure o modal */
+#cropper-modal .img-container {
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+#cropper-image {
+  display: block;
+  max-width: 100%; /* Required by Cropper.js */
 }
 
 /* ===============================
