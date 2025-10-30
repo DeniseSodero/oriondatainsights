@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passeio no Jardim - Amostra</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        
+        /* 1. Paleta de Cores Injetada do estilo.css */
+        :root {
+          --azul-escuro: #0a4d68;      /* */
+          --azul-medio: #088395;       /* */
+          --azul-claro: #05bfdb;       /* */
+          --azul-suave: #e8f4f8;       /* */
+          --verde-principal: #2d9596;  /* */
+          --verde-escuro: #1a5f5f;     /* */
+          --verde-claro: #9ee5d7;      /* */
+          --verde-suave: #e0f7f4;      /* */
+          --cinza-escuro: #2c3e50;     /* */
+          --cinza-claro: #ecf0f1;      /* */
+          --branco: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* 1. Cor de fundo atualizada */
+            background-color: var(--cinza-claro); /* */
+            padding: 8px; 
+        }
+
+        .game-area-container {
+            max-width: 350px; 
+            margin: 0 auto;
+            position: relative;
+            margin-top: 24px; 
+            padding-top: 80px; 
+        }
+        .grid-container {
+            display: grid;
+            width: 100%;
+            aspect-ratio: 7 / 8; 
+            /* 1. Cores do grid atualizadas */
+            border: 4px solid var(--azul-escuro); /* */
+            box-shadow: 0 10px 15px -3px rgba(10, 77, 104, 0.1), 0 4px 6px -2px rgba(10, 77, 104, 0.05);
+            margin: 0 auto;
+            position: relative; 
+            background-color: var(--azul-suave); /* */
+            margin-top: 0; 
+        }
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem; 
+            cursor: pointer;
+            /* 1. Cor da borda da célula atualizada */
+            border: 1px solid rgba(10, 77, 104, 0.2); 
+            transition: background-color 0.15s ease-in-out, transform 0.1s;
+            user-select: none;
+            z-index: 10;
+        }
+        .cell:hover:not(.selected):not(.optimal) {
+            background-color: var(--verde-claro); /* */
+        }
+        .selected {
+            /* 1. Cor do caminho selecionado atualizada */
+            background-color: var(--azul-claro) !important; /* */
+            color: white;
+            transform: scale(0.98);
+        }
+        /* (Cores do caminho ideal mantidas em vermelho para clareza funcional) */
+        .optimal {
+            background-color: #fca5a5 !important; 
+            color: #991b1b;
+            border: 2px solid #ef4444;
+            animation: pulse-optimal 1s infinite alternate;
+        }
+        @keyframes pulse-optimal {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
+        }
+
+        /* 1. Cores dos terrenos atualizadas */
+        .cost-1 { background-color: var(--branco); color: var(--cinza-escuro); } /* */
+        .cost-2 { background-color: var(--verde-suave); color: var(--verde-escuro); } /* */
+        .cost-3 { background-color: var(--verde-claro); color: var(--verde-escuro); } /* */
+        .cost-4 { background-color: var(--azul-suave); color: var(--azul-escuro); } /* */
+
+        .coreto-square {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem; 
+            color: white;
+            /* 1. Cor do destino atualizada */
+            background-color: var(--verde-principal); /* */
+            border: 2px solid var(--verde-escuro); /* */
+            border-radius: 8px;
+            cursor: pointer; 
+        }
+        .coreto-container {
+            width: 100%;
+            max-width: 350px; 
+            margin: 10px auto 20px auto;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr); 
+            gap: 0;
+            height: 40px; 
+        }
+
+        .disabled-btn {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .gate-icon {
+            /* 1. Cor do portão atualizada */
+            color: var(--azul-escuro); /* */
+            font-size: 60px;  
+            line-height: 1;
+            width: 80px; 
+            height: 80px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute; 
+            transform: translateX(-50%); 
+            z-index: 30;
+            top: 0; 
+        }
+
+        /* 2. Classe .lang-toggle removida */
+
+        /* 1. Classe de destaque da borda inicial */
+        .border-start-highlight {
+            border-color: var(--verde-principal) !important; /* */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="max-w-xl mx-auto">
+        
+        <div class="game-area-container"> 
+            <i id="gateIcon" class="bi bi-bank gate-icon"></i>
+            <div id="gameGrid" class="grid-container" style="grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(8, 1fr);">
+            </div>
+        </div>
+
+        <div class="coreto-container">
+            <div class="col-span-2"></div> 
+            <div id="coreto-2" class="coreto-square col-span-1">
+                <i class="bi bi-tree-fill"></i>
+            </div>
+            <div id="coreto-3" class="coreto-square col-span-1">
+                <i class="bi bi-tree-fill"></i>
+            </div>
+            <div id="coreto-4" class="coreto-square col-span-1">
+                <i class="bi bi-tree-fill"></i>
+            </div>
+            <div class="col-span-2"></div> 
+        </div>
+
+        <div class="flex flex-col gap-4 p-4 bg-white rounded-xl shadow-lg border border-[var(--verde-claro)] mt-4">
+            <div class="flex items-center justify-around gap-4 w-full px-4 mb-4">
+                <div class="text-center w-1/2">
+                    <p class="text-sm font-medium text-gray-500">Seu Esforço Atual:</p>
+                    <p id="totalCost" class="text-3xl font-extrabold text-[#ef4444]">0</p>
+                </div>
+                <div class="text-center w-1/2">
+                    <p class="text-sm font-medium text-gray-500">Caminho Ideal:</p>
+                    <p id="idealCostDisplay" class="text-3xl font-extrabold text-red-600">?</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3 w-full mt-4">
+                <div class="flex flex-col sm:flex-row justify-center gap-3 w-full">
+                    <button id="checkPathBtn" class="bg-[var(--verde-principal)] hover:bg-[var(--verde-escuro)] text-white font-bold py-3 px-2 rounded-xl shadow-md transition duration-300 transform hover:scale-105 w-full sm:w-1/2">
+                        Cheguei ao Bosque
+                    </button>
+                    <button id="showIdealPathBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-2 rounded-xl shadow-md transition duration-300 transform hover:scale-105 disabled-btn w-full sm:w-1/2" disabled onclick="showIdealPath()">
+                        Ver Caminho Ideal
+                    </button>
+                </div>
+                <div class="flex justify-center w-full">
+                    <button id="newGameBtn" class="bg-[var(--azul-medio)] hover:bg-[var(--azul-escuro)] text-white font-bold py-3 px-6 rounded-xl shadow-md transition duration-300 transform hover:scale-105 w-full sm:w-1/2" onclick="initializeGame()">
+                        Novo Passeio
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="statusMessage" class="mt-4 p-3 text-center rounded-xl bg-blue-50 text-blue-800 font-semibold hidden transition duration-300">
+        </div>
+    </div>
+
+
+    <script type/="text/javascript">
+        
+        // --- 3. LÓGICA DE TRADUÇÃO REMOVIDA ---
+        
+        // --- LÓGICA DO JOGO (MODIFICADA PARA AMOSTRA) ---
+        
+        const GRID_ROWS = 8; 
+        const GRID_COLS = 7; 
+        const CORETO_COLUMNS = [2, 3, 4]; 
+
+        let gridData = [];
+        let currentPath = [];
+        let isGameOver = false;
+        let idealCostValue = null; 
+        let gateCol = 3; 
+        let START_COLUMNS = [2, 3, 4]; 
+
+        // DOM References
+        const gameGridElement = document.getElementById('gameGrid');
+        const totalCostElement = document.getElementById('totalCost');
+        const idealCostDisplay = document.getElementById('idealCostDisplay'); 
+        const statusMessageElement = document.getElementById('statusMessage');
+        const checkPathBtn = document.getElementById('checkPathBtn');
+        const showIdealPathBtn = document.getElementById('showIdealPathBtn'); 
+        const gateIcon = document.getElementById('gateIcon'); 
+
+        document.addEventListener('DOMContentLoaded', () => {
+            checkPathBtn.addEventListener('click', checkWinCondition);
+            initializeGame();
+            // 3. Chamada setLanguage() removida
+        });
+
+        function generateGridValue(r) {
+            if (r < 3) { 
+                return Math.floor(Math.random() * 2) + 1; // 1-2 
+            } else if (r < 6) { 
+                return Math.floor(Math.random() * 3) + 1; // 1-3
+            } else { 
+                return Math.floor(Math.random() * 4) + 1; // 1-4
+            }
+        }
+
+        function getNeighbors(r, c) {
+            const neighbors = [];
+            const directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]; 
+            for (const [dr, dc] of directions) {
+                const newR = r + dr;
+                const newC = c + dc;
+                if (newR >= 0 && newR < GRID_ROWS && newC >= 0 && newC < GRID_COLS) {
+                    neighbors.push({ r: newR, c: newC });
+                }
+            }
+            return neighbors;
+        }
+        
+        function clearStatus() {
+            statusMessageElement.classList.add('hidden');
+            statusMessageElement.textContent = '';
+            // 3. Datasets de i18n removidos
+        }
+
+        // 3. Função showStatus simplificada para aceitar apenas strings
+        function showStatus(message, type = 'info') {
+            statusMessageElement.textContent = message;
+            statusMessageElement.classList.remove('hidden');
+            
+            // 1. Cores de status atualizadas para a paleta
+            let baseClasses = 'mt-4 p-3 text-center rounded-xl font-semibold transition duration-300';
+            if (type === 'success') {
+                statusMessageElement.className = baseClasses + ' bg-[var(--verde-suave)] text-[var(--verde-escuro)]'; /* */
+            } else if (type === 'error') {
+                statusMessageElement.className = baseClasses + ' bg-red-100 text-red-800'; // (Mantido vermelho para erro)
+            } else if (type === 'warning') {
+                statusMessageElement.className = baseClasses + ' bg-yellow-100 text-yellow-800'; // (Mantido amarelo para aviso)
+            } else { 
+                statusMessageElement.className = baseClasses + ' bg-[var(--azul-suave)] text-[var(--azul-escuro)]'; /* */
+            }
+        }
+
+        function isAdjacent(p1, p2) {
+            const dr = Math.abs(p1.r - p2.r);
+            const dc = Math.abs(p1.c - p2.c);
+            return (dr === 1 && dc === 0) || (dr === 0 && dc === 1);
+        }
+        
+        function runDijkstra(startColumns) {
+            const dist = Array.from({ length: GRID_ROWS }, () => Array(GRID_COLS).fill(Infinity));
+            const prev = {}; 
+            let nodesToVisit = [];
+            let minCostToTarget = Infinity;
+            let bestTarget = null;
+
+            for (const c of startColumns) {
+                const cost = gridData[0][c].cost;
+                dist[0][c] = cost;
+                nodesToVisit.push({ r: 0, c: c, cost: cost });
+            }
+
+            while (nodesToVisit.length > 0) {
+                nodesToVisit.sort((a, b) => a.cost - b.cost);
+                const { r, c, cost } = nodesToVisit.shift();
+                if (cost > dist[r][c]) continue;
+
+                for (const neighbor of getNeighbors(r, c)) {
+                    const { r: nr, c: nc } = neighbor;
+                    if (nr >= GRID_ROWS || nc < 0 || nc >= GRID_COLS) continue;
+                    const weight = gridData[nr][nc].cost;
+                    const newDist = dist[r][c] + weight;
+
+                    if (newDist < dist[nr][nc]) {
+                        dist[nr][nc] = newDist;
+                        prev[`${nr}_${nc}`] = { r, c }; 
+                        nodesToVisit.push({ r: nr, c: nc, cost: newDist });
+
+                        if (nr === GRID_ROWS - 1 && CORETO_COLUMNS.includes(nc)) {
+                            if (newDist < minCostToTarget) {
+                                minCostToTarget = newDist;
+                                bestTarget = { r: nr, c: nc };
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (bestTarget) {
+                const path = [];
+                let current = bestTarget;
+                const startNodeKeys = new Set(startColumns.map(c => `0_${c}`));
+                while (current) {
+                    path.unshift(current);
+                    const key = `${current.r}_${current.c}`;
+                    if (startNodeKeys.has(key)) break; 
+                    current = prev[key]; 
+                }
+                if (path.length > 0 && startNodeKeys.has(`${path[0].r}_${path[0].c}`)) {
+                    return { cost: minCostToTarget, path };
+                }
+            }
+            return null; 
+        }
+
+        function findIdealPath() {
+            return runDijkstra(START_COLUMNS);
+        }
+        
+        function showIdealPath() {
+            if (gridData.length === 0) {
+                // 3. Texto fixado em Português
+                showStatus('Selecione um caminho antes de verificar!', 'info');
+                return;
+            }
+            document.querySelectorAll('.cell').forEach(cell => cell.classList.remove('optimal'));
+            const result = findIdealPath();
+            if (result) {
+                // 3. Texto fixado em Português
+                showStatus(`Caminho Ideal Calculado! Esforço Mínimo: ${idealCostValue}.`, 'warning');
+                result.path.forEach(({ r, c }) => {
+                    const cellElement = gameGridElement.querySelector(`[data-r="${r}"][data-c="${c}"]`);
+                    if (cellElement) cellElement.classList.add('optimal'); 
+                });
+            } else {
+                // 3. Texto fixado em Português
+                showStatus('Erro ao calcular o Caminho Ideal. Tente um Novo Passeio.', 'error');
+            }
+            updateDisplay(); 
+        }
+
+        function positionGateIcon() {
+            const gridWidth = gameGridElement.offsetWidth;
+            if (!gridWidth) gridWidth = 350;
+            const CELL_UNIT = gridWidth / GRID_COLS;
+            const gateCenterX = gateCol * CELL_UNIT + (CELL_UNIT / 2);
+            gateIcon.style.left = `${gateCenterX}px`;
+        }
+
+        function initializeGame() {
+            clearStatus();
+            isGameOver = false;
+            currentPath = [];
+            gridData = [];
+            idealCostValue = null;
+            idealCostDisplay.textContent = '?';
+            
+            gameGridElement.innerHTML = '';
+            
+            showIdealPathBtn.classList.add('disabled-btn');
+            showIdealPathBtn.disabled = true;
+
+            const minCol = 1; 
+            const maxCol = GRID_COLS - 2; // 7 - 2 = 5
+            gateCol = Math.floor(Math.random() * (maxCol - minCol + 1)) + minCol; // Aleatório entre 1 e 5
+            START_COLUMNS = [gateCol - 1, gateCol, gateCol + 1];
+
+            for (let r = 0; r < GRID_ROWS; r++) {
+                gridData[r] = [];
+                let rowCosts = [];
+                for (let i = 0; i < GRID_COLS; i++) {
+                    rowCosts.push(generateGridValue(r));
+                }
+                for (let i = rowCosts.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [rowCosts[i], rowCosts[j]] = [rowCosts[j], rowCosts[i]];
+                }
+                for (let c = 0; c < GRID_COLS; c++) {
+                    gridData[r][c] = { r, c, cost: rowCosts[c], selected: false };
+                }
+            }
+
+            renderGrid();
+            setTimeout(positionGateIcon, 0); 
+            updateDisplay();
+            // 3. Texto fixado em Português
+            const startColumnsText = START_COLUMNS.map(i => i + 1).join(', ');
+            showStatus(`Novo passeio! Comece a caminhar na Linha 1 nas colunas ${startColumnsText}.`, 'info');
+        }
+
+        function renderGrid() {
+            gameGridElement.innerHTML = '';
+            for (let r = 0; r < GRID_ROWS; r++) {
+                for (let c = 0; c < GRID_COLS; c++) {
+                    const cellData = gridData[r][c];
+                    const cell = document.createElement('div');
+                    cell.className = `cell cost-${cellData.cost}`;
+                    if (r === 0 && START_COLUMNS.includes(c)) {
+                         // 1. Classe de destaque atualizada
+                         cell.classList.add('border-4', 'border-start-highlight', 'shadow-inner'); 
+                    }
+                    cell.dataset.r = r;
+                    cell.dataset.c = c;
+                    cell.textContent = cellData.cost;
+                    cell.addEventListener('click', () => handleCellClick(r, c));
+                    gameGridElement.appendChild(cell);
+                }
+            }
+            CORETO_COLUMNS.forEach(c => {
+                const coretoElement = document.getElementById(`coreto-${c}`);
+                if (coretoElement) {
+                    coretoElement.classList.remove('bg-yellow-400', 'animate-pulse');
+                }
+            });
+        }
+
+        function updateDisplay() {
+            const totalCost = currentPath.reduce((sum, { r, c }) => sum + gridData[r][c].cost, 0);
+            totalCostElement.textContent = totalCost;
+            document.querySelectorAll('.cell').forEach(cell => {
+                const r = parseInt(cell.dataset.r);
+                const c = parseInt(cell.dataset.c);
+                const isSelected = currentPath.some(p => p.r === r && p.c === c);
+                cell.classList.toggle('selected', isSelected);
+            });
+        }
+
+        function handleCellClick(r, c) {
+            if (isGameOver) {
+                // 3. Texto fixado em Português
+                showStatus('Fim de jogo. Clique em \'Novo Passeio\' para recomeçar.', 'error');
+                return;
+            }
+            const clickedPoint = { r, c };
+            const isAlreadyInPath = currentPath.some(p => p.r === r && p.c === c);
+
+            if (isAlreadyInPath) {
+                const lastIndex = currentPath.findIndex(p => p.r === r && p.c === c);
+                if (lastIndex !== -1) currentPath.splice(lastIndex + 1);
+            } else {
+                if (currentPath.length === 0) {
+                    if (r === 0 && START_COLUMNS.includes(c)) {
+                        currentPath.push(clickedPoint);
+                        clearStatus();
+                    } else {
+                        // 3. Texto fixado em Português
+                        const startColumnsText = START_COLUMNS.map(i => i + 1).join(', ');
+                        showStatus(`O passeio deve começar em uma das três posições no portão (Colunas ${startColumnsText}).`, 'error');
+                        return;
+                    }
+                } else {
+                    const lastPoint = currentPath[currentPath.length - 1];
+                    if (isAdjacent(lastPoint, clickedPoint)) {
+                        currentPath.push(clickedPoint);
+                        clearStatus();
+                    } else {
+                        // 3. Texto fixado em Português
+                        showStatus('O caminho deve ser contínuo! Clique em uma célula adjacente.', 'error');
+                        return;
+                    }
+                }
+            }
+            updateDisplay();
+        }
+
+        function checkWinCondition() {
+            if (currentPath.length === 0) {
+                // 3. Texto fixado em Português
+                showStatus('Selecione um caminho antes de verificar!', 'info');
+                return;
+            }
+            const lastPoint = currentPath[currentPath.length - 1];
+            const isAtTargetDestination = lastPoint.r === GRID_ROWS - 1 && CORETO_COLUMNS.includes(lastPoint.c);
+
+            if (isAtTargetDestination) {
+                showIdealPathBtn.classList.remove('disabled-btn');
+                showIdealPathBtn.disabled = false;
+                isGameOver = true;
+                const finalCost = currentPath.reduce((sum, { r, c }) => sum + gridData[r][c].cost, 0);
+                
+                const idealResult = findIdealPath();
+                idealCostValue = idealResult ? idealResult.cost : Infinity;
+                idealCostDisplay.textContent = idealCostValue;
+                
+                // 3. Textos fixados em Português
+                if (finalCost === idealCostValue) {
+                    showStatus(`SUCESSO! Você alcançou o Bosque! Seu Esforço: ${finalCost}. É o Caminho Ideal!`, 'success');
+                } else {
+                    showStatus(`SUCESSO! Você alcançou o Bosque! Seu Esforço: ${finalCost}. O Caminho Ideal teria esforço ${idealCostValue}.`, 'warning');
+                }
+                
+                CORETO_COLUMNS.forEach(c => {
+                    const coretoElement = document.getElementById(`coreto-${c}`);
+                    if (coretoElement && c === lastPoint.c) {
+                        coretoElement.classList.add('bg-yellow-400', 'animate-pulse');
+                        setTimeout(() => coretoElement.classList.remove('bg-yellow-400', 'animate-pulse'), 3000);
+                    }
+                });
+            } else {
+                // 3. Texto fixado em Português
+                showStatus('Você ainda não alcançou o Bosque (última linha). Continue caminhando!', 'error');
+            }
+        }
+        
+    </script>
+</body>
+</html>

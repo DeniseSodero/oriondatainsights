@@ -11,8 +11,7 @@
   
   <link rel="stylesheet" href="jogo_logico.css">
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1SBCKG8WK"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1SBCKG8WK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -65,50 +64,72 @@
     </nav>
   </header>
 
-  <main class="container-fluid my-5 app-page text-light"> <h1 class="text-center mb-4">Organizador Lógico</h1>
-    <p class="lead text-center">Experimente uma amostra do nosso app de dedução lógica.</p>
+  <main class="container-fluid my-5 app-page text-light"> 
+    <h1 class="text-center mb-4">Labirinto Botânico</h1>
+    <p class="lead text-center">Um quebra-cabeça de rotas para relaxar a mente.</p>
 
-    <section id="puzzle-demo" class="mt-5 p-3" style="background-color: rgba(255,255,255, 0.9); border-radius: 12px; color: #333;">
-      <div class="row">
-        
-        <div class="col-lg-4">
-          <h3 style="color: var(--azul-escuro);">Pistas</h3>
-          <ul id="pistas-container" class="list-group">
-            <li class="list-group-item">Carregando puzzle...</li>
-          </ul>
-        </div>
+    <div class="container-lg mt-4">
+      <div class="row g-4 g-lg-5 justify-content-center">
 
-      <div class="col-lg-8">
-
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0;">Grade Lógica</h3>
-            
-            <div class="d-flex">
-              <div id="tool-palette" class="btn-group me-2" role="group" aria-label="Ferramentas">
-                <button type="button" id="btn-tool-sim" class="btn btn-outline-success active">
-                  <i class="fas fa-check"></i>
-                </button>
-                <button type="button" id="btn-tool-nao" class="btn btn-outline-danger">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              
-              <button type="button" id="btn-verificar" class="btn btn-primary fw-bold">Verificar</button>
+        <div class="col-lg-5">
+          <div class="d-flex flex-column gap-4">
+          
+            <div style="padding: 20px; background-color: #f7f3e8; border-radius: 8px; border: 1px solid #ddd; width: 100%;">
+                
+                <h3 style="font-size: 1.5rem; font-weight: bold; color: #6d4c41 !important;">
+                    O Esforço do Terreno
+                </h3>
+                <p style="margin-bottom: 20px; color: #333 !important;">
+                    O objetivo é encontrar o caminho com o menor "Esforço" total. Cada número representa um tipo de terreno:
+                </p>
+                
+                <ul style="list-style-type: none; padding: 0;">
+                    <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; border-radius: 8px; background-color: #f5f5f4 !important; color: #57534e !important; border: 1px solid #ccc;">1</div>
+                        <span style="color: #333 !important;"><strong>Caminho Pavimentado:</strong> Esforço Mínimo (Custo 1)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; border-radius: 8px; background-color: #e7e5e4 !important; color: #78716c !important; border: 1px solid #ccc;">2</div>
+                        <span style="color: #333 !important;"><strong>Cascalho:</strong> Esforço Baixo (Custo 2)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; border-radius: 8px; background-color: #dcfce7 !important; color: #166534 !important; border: 1px solid #ccc;">3</div>
+                        <span style="color: #333 !important;"><strong>Grama:</strong> Esforço Médio (Custo 3)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; border-radius: 8px; background-color: #ffedd5 !important; color: #9a3412 !important; border: 1px solid #ccc;">4</div>
+                        <span style="color: #333 !important;"><strong>Subida / Degraus:</strong> Esforço Alto (Custo 4)</span>
+                    </li>
+                </ul>
             </div>
             
+            <div style="padding: 20px; background-color: #fff; border-radius: 8px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); width: 100%;">
+            
+                <h2 style="font-size: 1.8rem; font-weight: 800; color: #6d4c41; margin-bottom: 12px;">
+                   Gostou da Amostra?
+                </h2>
+                 <p style="font-size: 1.1rem; margin-bottom: 24px;">
+                     Compre a versão completa com dezenas de parques e desafios diários!
+                 </p>
+                
+                  <a href="[URL_DA_SUA_PAGINA_DE_PAGAMENTO]" 
+                    style="display: inline-block; background-color: #16a34a; color: white; font-weight: bold; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-size: 1.2rem;">
+                     Comprar Jogo Completo
+                 </a>
+            </div>
+
           </div>
-           <div id="grid-container" class="table-responsive">    </div>
-      </div>
-    </section>
-    <section class="mt-5 text-center">
-      <a href="#" class="botao btn-lg" style="background-color: var(--verde-principal);">
-        Baixe o App Completo <i class="fas fa-download ms-2"></i>
-      </a>
-    </section>
-
-  </main>
-
-  <footer id="contato" class="bg-primary text-light">
+        </div> <div class="col-lg-7">
+            <iframe src="passeio_jardim_amostra.html" 
+                    width="100%" 
+                    height="900px" 
+                    style="border:4px solid #6d4c41; border-radius: 8px; overflow: hidden; min-height: 720px;"
+                    frameborder="0" 
+                    scrolling="no"
+                    title="Amostra Grátis - Passeio no Jardim">
+            </iframe>
+        </div> </div> </div> </main>
+  <footer id="contato" >
     <h2>Contato</h2>
     <p>E-mail: contato@oriondatainsights.com</p>
     <p>
