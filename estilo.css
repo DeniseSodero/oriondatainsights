@@ -582,6 +582,33 @@ footer i:hover {
 }
 
 /* ===============================
+   Brinde Mini-História
+   =============================== */
+
+/* Botão de escolha */
+.btn-escolha {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: var(--branco); /* */
+  border: 2px solid var(--azul-medio); /* */
+  cursor: pointer;
+  background-color: var(--azul-medio); /* */
+  margin-top: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(8, 131, 149, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-escolha:hover {
+  background-color: var(--azul-escuro); /* */
+  border-color: var(--azul-escuro);
+  transform: translateY(-2px);
+  color: var(--branco); /* */
+}
+
+/* ===============================
    Responsividade Grid de Produtos
    =============================== */
 @media (max-width: 900px) and (min-width: 576px) {
