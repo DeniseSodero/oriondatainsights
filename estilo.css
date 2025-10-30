@@ -551,6 +551,22 @@ footer i:hover {
 }
 
 /* ===============================
+   Logo da Navbar (Orion)
+   =============================== */
+
+/* Este seletor mira na imagem que está dentro do link .navbar-brand */
+.navbar-brand img {
+  /* Define a altura do logo. 45px é um bom ponto de partida. */
+  height: 75px;
+  
+  /* Garante que a largura mude proporcionalmente */
+  width: auto; 
+
+  /* Remove qualquer borda que o navegador possa adicionar */
+  border: none;
+}
+
+/* ===============================
    Responsividade Grid de Produtos
    =============================== */
 @media (max-width: 900px) and (min-width: 576px) {
