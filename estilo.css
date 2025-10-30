@@ -326,11 +326,16 @@ button:hover {
 }
 
 .aniversariante-pdf img {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  object-fit: cover;
+ 
+  width: 30px;
+  height: 30px; 
+  
+  border-radius: 50%; /* Mantém redondo */
   border: 1px solid #ddd;
+
+  /* 2. AJUSTE DE "CROP": */
+  object-fit: cover; /* Diz para cobrir o espaço, cortando o excesso */
+  object-position: center top; /* Diz para ALINHAR PELO TOPO, pegando o rosto */
 }
 
 /* ===============================
