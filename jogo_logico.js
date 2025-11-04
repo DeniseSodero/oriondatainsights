@@ -45,7 +45,7 @@ function configurarPaleta() {
  * Carrega o puzzle e guarda a solução
  */
 async function carregarPuzzle() {
-  const caminhoDoPuzzle = 'demo_puzzle.json'; 
+  const caminhoDoPuzzle = 'puzzles/demo_puzzle.json'; 
 
   try {
     const response = await fetch(caminhoDoPuzzle);
