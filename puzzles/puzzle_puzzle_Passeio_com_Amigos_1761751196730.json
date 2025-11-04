@@ -1,0 +1,27 @@
+{
+  "id": "puzzle_Passeio_com_Amigos_1761751196730",
+  "tema": "Passeio com Amigos",
+  "nivel": "medio",
+  "categorias": {
+    "pessoas": [
+      "Juliana",
+      "Solange",
+      "Beatriz"
+    ],
+    "brincadeiras": [
+      "Videogame",
+      "Jogo de Tabuleiro",
+      "Pega-pega"
+    ],
+    "passeio": [
+      "Praia",
+      "Cinema",
+      "Show"
+    ]
+  },
+  "pistas": [
+    "Quem está com Pega-pega não está com Praia.",
+    "Quem está com Pega-pega também está com Show.",
+    "Quem está com Jogo de Tabuleiro também está com Cinema."
+  ]
+}

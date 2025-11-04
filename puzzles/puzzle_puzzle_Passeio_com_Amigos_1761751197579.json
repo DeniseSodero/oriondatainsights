@@ -1,0 +1,27 @@
+{
+  "id": "puzzle_Passeio_com_Amigos_1761751197579",
+  "tema": "Passeio com Amigos",
+  "nivel": "medio",
+  "categorias": {
+    "pessoas": [
+      "Maria",
+      "Solange",
+      "Ester"
+    ],
+    "brincadeiras": [
+      "Jogo de Tabuleiro",
+      "Jogar bola",
+      "Videogame"
+    ],
+    "passeio": [
+      "Praia",
+      "Montanha",
+      "Shopping Center"
+    ]
+  },
+  "pistas": [
+    "Quem está com Jogo de Tabuleiro também está com Montanha.",
+    "Quem está com Videogame não está com Montanha.",
+    "Quem está com Jogar bola não está com Praia."
+  ]
+}

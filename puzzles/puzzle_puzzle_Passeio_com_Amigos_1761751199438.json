@@ -1,0 +1,27 @@
+{
+  "id": "puzzle_Passeio_com_Amigos_1761751199438",
+  "tema": "Passeio com Amigos",
+  "nivel": "medio",
+  "categorias": {
+    "pessoas": [
+      "Daniel",
+      "Artur",
+      "Bernardo"
+    ],
+    "brincadeiras": [
+      "Pular corda",
+      "Pega-pega",
+      "Jogo de Tabuleiro"
+    ],
+    "passeio": [
+      "Cinema",
+      "Shopping Center",
+      "Jardim"
+    ]
+  },
+  "pistas": [
+    "Quem está com Pega-pega também está com Jardim.",
+    "Quem está com Jogo de Tabuleiro não está com Cinema.",
+    "Quem está com Pular corda também está com Cinema."
+  ]
+}

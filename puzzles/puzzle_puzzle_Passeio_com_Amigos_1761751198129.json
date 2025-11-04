@@ -1,0 +1,27 @@
+{
+  "id": "puzzle_Passeio_com_Amigos_1761751198129",
+  "tema": "Passeio com Amigos",
+  "nivel": "medio",
+  "categorias": {
+    "pessoas": [
+      "Ana",
+      "Bernardo",
+      "Maria"
+    ],
+    "brincadeiras": [
+      "Pular corda",
+      "Jogar bola",
+      "Quebra-cabeça"
+    ],
+    "passeio": [
+      "Horto",
+      "Restaurante",
+      "Jardim"
+    ]
+  },
+  "pistas": [
+    "Quem está com Pular corda também está com Horto.",
+    "Quem está com Jogar bola também está com Restaurante.",
+    "Quem está com Quebra-cabeça também está com Jardim."
+  ]
+}

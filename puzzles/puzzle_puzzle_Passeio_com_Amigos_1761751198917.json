@@ -1,0 +1,27 @@
+{
+  "id": "puzzle_Passeio_com_Amigos_1761751198917",
+  "tema": "Passeio com Amigos",
+  "nivel": "medio",
+  "categorias": {
+    "pessoas": [
+      "Rodrigo",
+      "Artur",
+      "Maria"
+    ],
+    "brincadeiras": [
+      "Esconde-esconde",
+      "Pular corda",
+      "Quebra-cabeça"
+    ],
+    "passeio": [
+      "Montanha",
+      "Shopping Center",
+      "Show"
+    ]
+  },
+  "pistas": [
+    "Quem está com Esconde-esconde não está com Shopping Center.",
+    "Quem está com Esconde-esconde também está com Show.",
+    "Quem está com Quebra-cabeça não está com Show."
+  ]
+}

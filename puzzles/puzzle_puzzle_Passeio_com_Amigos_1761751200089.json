@@ -1,0 +1,27 @@
+{
+  "id": "puzzle_Passeio_com_Amigos_1761751200089",
+  "tema": "Passeio com Amigos",
+  "nivel": "medio",
+  "categorias": {
+    "pessoas": [
+      "Sofia",
+      "Reinaldo",
+      "Clara"
+    ],
+    "brincadeiras": [
+      "Jogo de Tabuleiro",
+      "Esconde-esconde",
+      "Pular corda"
+    ],
+    "passeio": [
+      "Shopping Center",
+      "Cinema",
+      "Horto"
+    ]
+  },
+  "pistas": [
+    "Quem está com Jogo de Tabuleiro também está com Cinema.",
+    "Quem está com Esconde-esconde também está com Horto.",
+    "Quem está com Pular corda também está com Shopping Center."
+  ]
+}

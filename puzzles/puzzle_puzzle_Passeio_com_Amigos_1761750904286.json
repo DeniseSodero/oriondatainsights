@@ -1,0 +1,27 @@
+{
+  "id": "puzzle_Passeio_com_Amigos_1761750904286",
+  "tema": "Passeio com Amigos",
+  "nivel": "medio",
+  "categorias": {
+    "pessoas": [
+      "Reinaldo",
+      "Enzo",
+      "Ana"
+    ],
+    "brincadeiras": [
+      "Jogar bola",
+      "Jogar Cartas",
+      "Quebra-cabeça"
+    ],
+    "passeio": [
+      "Horto",
+      "Show",
+      "Montanha"
+    ]
+  },
+  "pistas": [
+    "Quem está com Jogar bola também está com Show.",
+    "Quem está com Quebra-cabeça não está com Show.",
+    "Quem está com Jogar bola não está com Montanha."
+  ]
+}
