@@ -1,0 +1,50 @@
+[
+  {
+    "id": "puzzle_lanche",
+    "categorias": {
+      "Pessoas": ["Ana", "Beto", "Carla"],
+      "Bebidas": ["Café", "Suco", "Água"]
+    },
+    "pistas": [
+      "A pessoa que bebeu Água não é Beto.",
+      "Carla bebeu Café."
+    ],
+    "solucao": [
+      { "Pessoas": "Ana", "Bebidas": "Água" },
+      { "Pessoas": "Beto", "Bebidas": "Suco" },
+      { "Pessoas": "Carla", "Bebidas": "Café" }
+    ]
+  },
+  {
+    "id": "puzzle_animais",
+    "categorias": {
+      "Donos": ["Davi", "Eva", "Leo"],
+      "Animais": ["Cão", "Gato", "Peixe"]
+    },
+    "pistas": [
+      "O animal de Eva não sabe nadar.",
+      "Davi tem um Gato."
+    ],
+    "solucao": [
+      { "Donos": "Davi", "Animais": "Gato" },
+      { "Donos": "Eva", "Animais": "Peixe" },
+      { "Donos": "Leo", "Animais": "Cão" }
+    ]
+  },
+  {
+    "id": "puzzle_locais",
+    "categorias": {
+      "Pessoas": ["Ana", "Beto", "Carla"],
+      "Locais": ["Cozinha", "Sala", "Jardim"]
+    },
+    "pistas": [
+      "Beto está no Jardim.",
+      "Ana não está na Sala."
+    ],
+    "solucao": [
+      { "Pessoas": "Ana", "Locais": "Cozinha" },
+      { "Pessoas": "Beto", "Locais": "Jardim" },
+      { "Pessoas": "Carla", "Locais": "Sala" }
+    ]
+  }
+]
