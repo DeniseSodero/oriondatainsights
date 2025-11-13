@@ -91,3 +91,11 @@
   color: #fff;
   border-color: #e74c3c;
 }
+
+#tool-palette #btn-tool-sim.active i.fa-check {
+  color: white !important;
+}
+
+#tool-palette #btn-tool-nao.active i.fa-times {
+  color: white !important;
+}

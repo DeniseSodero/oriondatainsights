@@ -1,23 +1,23 @@
 /* ===================================
-   jogo_logico.js (Versão Final v5)
+   jogo_logico.js (VERSÃO ALEATÓRIA)
    - Lógica de Verificação de Solução
    =================================== */
 
 // --- Variáveis Globais ---
 let ferramentaAtiva = 'sim'; // 'sim' (✓) ou 'nao' (X)
-let solucaoCorreta = [];     // NOVO: Vai guardar o gabarito
-let categoriasPuzzle = {};   // NOVO: Vai guardar as categorias
-let modalResultado = null;   // NOVO: Referência para o modal do Bootstrap
+let solucaoCorreta = [];     // Vai guardar o gabarito
+let categoriasPuzzle = {};   // Vai guardar as categorias
+let modalResultado = null;   // Referência para o modal do Bootstrap
 
 // --- Inicialização ---
 document.addEventListener('DOMContentLoaded', () => {
-  carregarPuzzle();
+  // MUDANÇA: Chamamos a nova função de inicialização
+  iniciarJogoAleatorio();
+  
   configurarPaleta();
   
-  // NOVO: Configurar o botão de verificação
   document.getElementById('btn-verificar').addEventListener('click', verificarSolucao);
   
-  // NOVO: Pegar a referência do modal
   modalResultado = new bootstrap.Modal(document.getElementById('modal-resultado'));
 });
 
@@ -42,32 +42,52 @@ function configurarPaleta() {
 }
 
 /**
- * Carrega o puzzle e guarda a solução
+ * MUDANÇA: Carrega a LISTA de puzzles, sorteia UM, e o processa.
  */
-async function carregarPuzzle() {
-  const caminhoDoPuzzle = 'puzzles/demo_puzzle.json'; 
+async function iniciarJogoAleatorio() {
+  // Caminho para o NOVO arquivo JSON
+  const caminhoDaLista = 'puzzles/lista_de_puzzles.json'; 
 
   try {
-    const response = await fetch(caminhoDoPuzzle);
+    const response = await fetch(caminhoDaLista);
     if (!response.ok) {
-      throw new Error(`Erro ao carregar o puzzle: ${response.statusText}`);
+      throw new Error(`Erro ao carregar a lista de puzzles: ${response.statusText}`);
     }
-    const puzzle = await response.json();
+    const listaDePuzzles = await response.json();
 
-    // NOVO: Guarda a solução e categorias globalmente
-    solucaoCorreta = puzzle.solucao;
-    categoriasPuzzle = puzzle.categorias;
+    // Sorteia um puzzle da lista
+    const indiceAleatorio = Math.floor(Math.random() * listaDePuzzles.length);
+    const puzzleSorteado = listaDePuzzles[indiceAleatorio];
 
-    // Constrói a interface
-    construirPistas(puzzle.pistas);
-    construirGrade(puzzle.categorias);
+    // Processa o puzzle que foi sorteado
+    processarPuzzleSorteado(puzzleSorteado);
 
   } catch (error) {
-    console.error("Não foi possível carregar o puzzle:", error);
+    console.error("Não foi possível carregar a lista de puzzles:", error);
     document.getElementById('pistas-container').innerHTML = 
-      '<li class="list-group-item list-group-item-danger">Erro ao carregar o puzzle. Verifique se o arquivo "puzzles/demo_puzzle.json" existe.</li>';
+      '<li class="list-group-item list-group-item-danger">Erro ao carregar a lista de puzzles. Verifique se o arquivo "puzzles/lista_de_puzzles.json" existe.</li>';
   }
 }
+
+/**
+ * MUDANÇA: Esta função contém a lógica que estava em 'carregarPuzzle'.
+ * Ela é chamada DEPOIS que um puzzle é sorteado.
+ */
+function processarPuzzleSorteado(puzzle) {
+  // Guarda a solução e categorias globalmente
+  solucaoCorreta = puzzle.solucao;
+  categoriasPuzzle = puzzle.categorias;
+
+  // Constrói a interface
+  construirPistas(puzzle.pistas);
+  construirGrade(puzzle.categorias);
+}
+
+
+// ======================================================
+// NENHUMA MUDANÇA NECESSÁRIA DAQUI PARA BAIXO
+// (O restante do seu código original)
+// ======================================================
 
 function construirPistas(pistas) {
   const container = document.getElementById('pistas-container');
@@ -190,76 +210,63 @@ function aoClicarNaCelula(event) {
 }
 
 // ======================================================
-// NOVO: FUNÇÃO DE VERIFICAÇÃO
+// FUNÇÃO DE VERIFICAÇÃO (INALTERADA)
 // ======================================================
 
 function verificarSolucao() {
-  // 1. Gera um "Set" (lista de consulta rápida) com todos os pares corretos
   const paresCorretos = new Set();
-  const nomesCategorias = Object.keys(categoriasPuzzle); // Ex: ['Pessoas', 'Comidas', 'Animais']
+  const nomesCategorias = Object.keys(categoriasPuzzle);
 
-  // Itera sobre a solução (ex: {Pessoas: "Ana", Comidas: "Maçã", Animais: "Gato"})
   solucaoCorreta.forEach(solucao => {
-    // Cria todos os pares (Ana-Maçã, Ana-Gato, Maçã-Gato)
     for (let i = 0; i < nomesCategorias.length; i++) {
       for (let j = i + 1; j < nomesCategorias.length; j++) {
         const cat1 = nomesCategorias[i];
         const cat2 = nomesCategorias[j];
         
-        // Gera uma chave única e ordenada para o par
         const item1 = solucao[cat1];
         const item2 = solucao[cat2];
-        const chave = [item1, item2].sort().join('-'); // Ex: "Ana-Maçã"
+        const chave = [item1, item2].sort().join('-');
         paresCorretos.add(chave);
       }
     }
   });
 
-  // 2. Itera por TODAS as células clicáveis da grade
   const todasAsCelulas = document.querySelectorAll('#grid-container td.clicavel');
-  let estaCorreto = true; // Começa assumindo que está certo
+  let estaCorreto = true;
 
   for (const celula of todasAsCelulas) {
     const item1 = celula.dataset.itemVert;
     const item2 = celula.dataset.itemHoriz;
-    const chave = [item1, item2].sort().join('-'); // Ex: "Ana-Maçã"
+    const chave = [item1, item2].sort().join('-');
 
     const usuarioMarcouSim = celula.textContent === '✓';
     const ehUmParCorreto = paresCorretos.has(chave);
 
-    // 3. Procura por erros
-    // Erro 1: Falso Positivo (marcou ✓ onde não devia)
     if (usuarioMarcouSim && !ehUmParCorreto) {
       estaCorreto = false;
-      break; // Já sabemos que está errado, pode parar
+      break; 
     }
     
-    // Erro 2: Falso Negativo (não marcou ✓ onde devia)
     if (!usuarioMarcouSim && ehUmParCorreto) {
       estaCorreto = false;
-      break; // Já sabemos que está errado, pode parar
+      break; 
     }
   }
 
-  // 4. Mostra o modal com o resultado
   mostrarResultado(estaCorreto);
 }
 
-/**
- * NOVO: Mostra o modal de sucesso ou erro
- */
 function mostrarResultado(sucesso) {
   const icone = document.getElementById('modal-icone');
   const mensagem = document.getElementById('modal-mensagem');
 
   if (sucesso) {
-    icone.className = 'fas fa-check-circle fa-5x text-success mb-3'; // Ícone verde
+    icone.className = 'fas fa-check-circle fa-5x text-success mb-3'; 
     mensagem.textContent = 'Parabéns! Você resolveu o puzzle!';
   } else {
-    icone.className = 'fas fa-times-circle fa-5x text-danger mb-3'; // Ícone vermelho
+    icone.className = 'fas fa-times-circle fa-5x text-danger mb-3'; 
     mensagem.textContent = 'Quase lá! Parece que há um erro. Revise suas respostas.';
   }
 
-  // Abre o modal
   modalResultado.show();
 }

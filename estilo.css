@@ -494,7 +494,7 @@ footer i:hover {
 }
 
 .dropdown-item:hover {
-  background-color: var(--verde-suave) !important;
+  background-color: var(--verde-principal) !important;
   color: var(--verde-escuro) !important;
 }
 
