@@ -6,7 +6,7 @@
       "Bebidas": ["Café", "Suco", "Água"]
     },
     "pistas": [
-      "A pessoa que bebeu Água não é Beto.",
+      "A pessoa que bebeu Água não foi o Beto.",
       "Carla bebeu Café."
     ],
     "solucao": [
@@ -47,5 +47,4 @@
       { "Pessoas": "Carla", "Locais": "Sala" }
     ]
   }
-
 ]
