@@ -22,7 +22,7 @@
       "Animais": ["Cão", "Gato", "Peixe"]
     },
     "pistas": [
-      "O animal de Eva não sabe nadar.",
+      "O animal de Leo não sabe nadar.",
       "Davi tem um Gato."
     ],
     "solucao": [
@@ -47,4 +47,5 @@
       { "Pessoas": "Carla", "Locais": "Sala" }
     ]
   }
+
 ]
